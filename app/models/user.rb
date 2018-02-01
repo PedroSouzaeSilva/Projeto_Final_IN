@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   has_secure_password
   mount_uploader :avatar, AvatarUploader
+  has_many :user_occupations
+  has_many :occupations, through: :user_occupations
 
   validates :name, presence: true, length: { in: 2..20 }
 	

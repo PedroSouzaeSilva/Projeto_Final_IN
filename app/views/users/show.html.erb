@@ -9,6 +9,13 @@
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
+<p>
+  <strong>Cargo(s):</strong>
+  <% @user.occupations.each do |occupation| %>
+
+    <%= occupation.name_occu %>
+  <% end %>
+</p>
 
 <p>
   

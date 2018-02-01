@@ -21,6 +21,12 @@
     <%= form.text_field :email, id: :user_email %>
   </div>
 
+  <%= form.label "Cargo" %>
+    <%= select("", "occupation_id", Occupation.all.collect {|occupation| [ occupation.name_occu,
+      occupation.id ] }, {include_blank: "Cargo"}) %>
+  <br>
+  
+
   <div class="field">
     <%= form.label :password %>
     <%= form.password_field :password, id: :usuario_password %>
