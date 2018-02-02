@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
+occu00=Occupation.create(name_occu: "Trainee")
 occu01=Occupation.create(name_occu: "PMO")
 occu02=Occupation.create(name_occu: "Desenvolvedor")
 occu03=Occupation.create(name_occu: "Gerente de Projetos")
@@ -27,5 +27,6 @@ occu16=Occupation.create(name_occu: "Assessor de Análise")
 occu17=Occupation.create(name_occu: "Assessor de Criação")
 occu18=Occupation.create(name_occu: "Assessor de Projetos")
 occu19=Occupation.create(name_occu: "Assessor de Projetos")
+
 
 
