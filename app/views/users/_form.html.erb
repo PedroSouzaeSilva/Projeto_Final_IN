@@ -16,9 +16,16 @@
   <section class="cadastro">
     <%= image_tag("lobo.png", alt:"Lobo", class:"lobo") %>
 
+
     <div class="field-avatar">
+      <label for="input-file", class="botao" >Selecionar imagem...</label>
      <%= form.file_field :avatar, id: :user_avatar %>
+      <input id='input-file' type='file' value=''></input>
+      <div class="file-name">
+        <span id='file-name'>Nenhuma Imagem Selecionada</span>
+      </div>
     </div>
+
 
     <div class="cadastro-container">
       <div class="form">
@@ -53,7 +60,7 @@
     </div>
 
     <%= link_to 'Voltar',  users_path %>
-    
+
   </div>
 
 <% end %>
