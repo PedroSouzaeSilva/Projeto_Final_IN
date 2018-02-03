@@ -18,9 +18,17 @@
 </p>
 
 <p>
-  
+  <strong>Diretoria:</strong>
+<!--  <p><%= @user.directions.name %></p>
+</p>-->
+<% @user.directions.each do |direction| %>
+  <p><%= direction.name %></p>
+<% end %>
+
+<p>
+
   <%= image_tag @user.avatar.thumb.url if !@user.avatar.nil? %>
-  
+
 </p>
 
 

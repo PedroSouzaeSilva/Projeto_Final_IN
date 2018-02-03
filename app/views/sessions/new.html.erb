@@ -3,9 +3,10 @@
 <%= form_for :sessions, url: :login do |form| %>
   <%= form.label :email %>
   <%= form.email_field :email %>
-  
-  <%= form.label :senha %>
+
+  <%= form.label :password %>
   <%= form.password_field :password %>
-	  
+
   <%= form.submit "Entrar" %>
+  <%= link_to "Esqueci minha senha", new_password_path %>
 <% end %>
