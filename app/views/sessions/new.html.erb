@@ -17,7 +17,7 @@
       <% end %>
       <div class = "botoes">
   			<button type="button" class = "blue-button blue-long-text" id="esqueci-button">Esqueci minha senha</button>
-  			<button type="button" class = "blue-button" id="cadastro-button">Cadastro</button>
+  			<%= button_to "Cadastro", new_user_path(@user), :id => "cadastro-button", :class => "blue-button", :method => :get %>
   		</div>
 	  </div>
 	</section>

@@ -102,7 +102,7 @@ button{
 	width: 140px;
 }
 
-.blue-long-text{
+.blue-long-text{  /*Serve apenas para reduzir o tamanho do texto do botão pra manter a consistência*/
   font-size: 1em;
   padding: 5px 0;
 	background-color: rgba(5,5,15,0.5);
@@ -113,6 +113,14 @@ button{
 
 /*---- Header ----*/
 
+/* Mudei muita coisa, incluindo tamanho, posição e etc.
+	O position relaative serve para interação com o submenu, sendo que a absolute removia a altura da div em relação às sections abaixo.
+	Então, botei na relative para não ficar por cima da section.
+	
+	Mudei a classe da Logo para logo-IN-Logado, pois ela tem um  comportamento diferente se o usuário está logado ou não, pois o menu
+	interage com ela e talz. A logo1 continua funcionando normalmente para as páginas não-logadas.
+	
+*/
 .header{
 	width: 100%;
 	min-height: 100px;
