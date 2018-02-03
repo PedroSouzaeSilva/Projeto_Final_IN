@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  get 'new_password/search', to: "new_password#search", as: :new_password
+  post 'new_password/search', to: "new_password#recovery"
+
   resources :projects
   root to: "sessions#new"
   get 'login', to: "sessions#new", as: :login

@@ -26,7 +26,10 @@ occu15=Occupation.create(name_occu: "Assessor Presidência")
 occu16=Occupation.create(name_occu: "Assessor de Análise")
 occu17=Occupation.create(name_occu: "Assessor de Criação")
 occu18=Occupation.create(name_occu: "Assessor de Projetos")
-occu19=Occupation.create(name_occu: "Assessor de Projetos")
 
 
-
+dir1=Direction.create(name: "Diretoria de Gerência de Pessoas")
+dir2=Direction.create(name: "Diretoria de Gerência de Marketing")
+dir3=Direction.create(name: "Diretoria de Gerência de Financeiro")
+dir4=Direction.create(name: "Diretoria de Gerência de Projetos")
+dir5=Direction.create(name: "Diretoria de Gerência de Presidência")

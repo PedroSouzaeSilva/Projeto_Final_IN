@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :usuario_nao_logado, except: [:new, :create]
   before_action :usuario_logado, only: [:new, :create]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user_or_admin, only: [:edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
@@ -44,6 +45,8 @@ class UsersController < ApplicationController
       if @user.update(user_params)
         uo = UserOccupation.new(user_id: @user.id, occupation_id: params[:occupation_id])
         uo.save
+        ud = UserDirection.new(user_id: @user.id, direction_id: params[:direction_id])
+        ud.save
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
@@ -72,5 +75,15 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation, :avatar)
+    end
+
+    def correct_user_or_admin
+      if !current_user.admin && current_user != @user
+        flash[:alert] = "Não permitido."
+        redirect_to user_path(id: current_user.id)
+      elsif current_user == @user && current_user.admin
+        flash[:alert] = "Não permitido."
+        redirect_to user_path(id: current_user.id)
+      end
     end
 end

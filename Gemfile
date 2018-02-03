@@ -5,6 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# geração automática de senhas
+gem "passgen"
+
 # redimencionamento de imagem
 gem "mini_magick"
 
