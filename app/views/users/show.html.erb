@@ -1,29 +1,41 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-<p>
-  <strong>Cargo(s):</strong>
-  <% @user.occupations.each do |occupation| %>
-
-    <p><%= occupation.name_occu %></p>
-  <% end %>
-</p>
-
-<p>
-  
-  <%= image_tag @user.avatar.thumb.url if !@user.avatar.nil? %>
-  
-</p>
-
-
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+    <section class="perfil">
+      <div class="perfil-container">
+        <div class="perfil-foto">
+          <%= image_tag @user.avatar.thumb.url, alt: "Foto de Perfil", class: "foto" if !@user.avatar.nil?%>
+          <button type="submit"><%= link_to 'Edit', edit_user_path(@user) %> |</button>
+          <button type="submit">Permissões</button>
+        </div>
+        <div class="nseimais">
+          <div class="perfil-nome">
+            <h2><%= @user.name %></h2>
+          </div>
+          <div class="perfil-email">
+            <div class="email-container">
+              <h3><%= @user.email %></h3>
+            </div>
+          </div>
+          <div class="cargos">
+            <div class="cargos-container">
+              <% @user.occupations.each do |occupation| %>
+                <p><%= occupation.name_occu %></p>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="perfil-botoes">
+          <div class="editar">
+            <a href="#">Editar</a>
+          </div>
+          <div class="projetos">
+            <a href="#">Projetos</a>
+          </div>
+          <div class="rendimento">
+            <a href="#">Rendimento</a>
+          </div>
+          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </div>
+      </div>
+    </section>
+    
+    <%= link_to 'Back', users_path %>
