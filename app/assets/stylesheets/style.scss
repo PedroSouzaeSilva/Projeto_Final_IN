@@ -1,0 +1,387 @@
+*{
+	box-sizing: border-box;
+	font-family: 'Exo 2', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+/* Login */
+
+body{
+	color: #E5E5EC;
+	font-family: 'Exo 2', sans-serif;
+}
+
+.logo1{
+	position: relative;
+	margin: 30px 0 20px 30px;
+	z-index: 90;
+}
+
+::-webkit-input-placeholder {
+	color: #9F9EA3;
+	font-family: 'Exo 2', sans-serif;
+	font-style: italic;
+}
+
+.wrapper{
+  background: #221E46;
+  background: -webkit-linear-gradient(top left, #9F9EA3 0%, #221E46 100%);
+  background: -moz-linear-gradient(top left, #9F9EA3 0%, #221E46 100%);
+  background: -o-linear-gradient(top left, #9F9EA3 0%, #221E46 100%);
+  background: linear-gradient(to bottom right, #9F9EA3 0%, #221E46 100%);
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+}
+
+.botoes{
+  width: 250px;
+  margin: 0 auto;
+  display: block;
+}
+
+input{
+	display: block;
+	appearance: none;
+	outline: 0;
+	width: 250px;
+	border: 1px solid #9F9EA3;
+	border-radius: 10px;
+	padding: 10px 15px;
+	margin: 0 auto 10px auto;
+	text-align: center;
+	font-size: 18px;
+	color: #E5E5EC;
+    background-color: rgba(5,5,5,0);
+}
+
+input:focus{
+	background-color: white;
+	width: 300px;
+	color: #9F9EA3;
+	background-color: rgba(5,5,5,0);
+	font-weight: 700;
+}
+
+button{
+	appearance: none;
+	outline: 0;
+	background-color: #E5E5EC;
+	border: 0;
+	padding: 10px 15px;
+	color: #222222;
+	border-radius: 10px;
+	width: 250px;
+	cursor: pointer;
+	font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+.lobo{
+	display: block;
+	max-width: 100px;
+	margin: 30px auto;
+}
+
+#login-button{
+	margin-bottom: 20px;
+}
+
+.blue-button{
+	font-size: 1.4em;
+  padding: 5px 15px;
+	background-color: rgba(5,5,15,0.5);
+	color: #9F9EA3;
+	display: block;
+	margin: 10px auto;
+}
+
+#cadastro-button{
+	width: 140px;
+}
+
+.blue-long-text{  /*Serve apenas para reduzir o tamanho do texto do botão pra manter a consistência*/
+  font-size: 1em;
+  padding: 5px 0;
+	background-color: rgba(5,5,15,0.5);
+	color: #9F9EA3;
+}
+
+
+
+/*---- Header ----*/
+
+/* Mudei muita coisa, incluindo tamanho, posição e etc.
+	O position relaative serve para interação com o submenu, sendo que a absolute removia a altura da div em relação às sections abaixo.
+	Então, botei na relative para não ficar por cima da section.
+	
+	Mudei a classe da Logo para logo-IN-Logado, pois ela tem um  comportamento diferente se o usuário está logado ou não, pois o menu
+	interage com ela e talz. A logo1 continua funcionando normalmente para as páginas não-logadas.
+	
+*/
+.header{
+	width: 100%;
+	min-height: 100px;
+	background-color: rgba(20,5,50,0.5);
+	position: relative;
+	margin: 0 auto;
+	top: 0;
+	left: 0;
+}
+
+.logo-IN-Logado {
+	margin: 30px 0 20px 30px;
+	z-index: 90;
+	float: left;
+}
+
+.header-container{
+	max-width: 920px;
+	margin: 0 auto;
+	display: black;
+}
+
+.header li{
+	list-style: none;
+}
+
+.header::after, .header::before{
+	display: table;
+	content:'';
+	clear:both;
+}
+
+
+/* ------------------- Aqui começa o código do drop-down menu, baseado em: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_dropdown_navbar_click */
+
+.navbar-container {
+	max-width: 920px;
+	margin: 0 auto;
+}
+
+.navbar {
+	margin-top: 53px;
+    overflow: hidden;
+    font-family: Arial;
+    float: right;
+}
+
+.navbar-container::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.navbar-container::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.navbar a {
+    float: right;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    width: 120px;
+    border-radius: 5px 5px 0 0;
+}
+
+
+.dropdown {
+    float: right;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    cursor: pointer;
+    font-size: 0.75em;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font: inherit;
+    margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+    background-color: #222222;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    background-color: #f9f9f9;
+    width: 120px;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+}
+
+
+/*-------------------------- Aqui termina o código copiado do drop menu */
+
+/* Perfil */
+
+.perfil{
+	max-width: 920px;
+	margin: 40px auto;
+}
+
+.perfil-container{
+	width: 800px;
+	background-color: rgba(20,5,50,0.3);
+	border-radius: 20px;
+	margin: 0 auto;
+}
+
+.perfil-foto{
+	width: 300px;
+	margin-right: 0;
+}
+
+.perfil-foto button{
+	margin: 0 auto;
+	display: block;
+	margin-bottom: 10px;
+	max-width: 230px;
+	margin: 10px 50px;
+	background-color: rgba(255,255,255,0.5);
+
+}
+
+.foto{
+	max-width: 230px;
+	margin: 20px 50px;
+	margin-bottom: 10px;
+	padding: 30px 0;
+}
+
+
+.cargos-container{
+	max-width: 400px;
+	background-color: rgba(255,255,255,0.5);
+	text-align: center;
+	padding: 30px;
+	border-radius: 0 20px;
+}
+
+.perfil h2{
+	font-weight: 700;
+	margin-bottom: 30px;
+}
+
+.perfil-nome{
+	width: 300px;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.cargos h3{
+	font-family: 'Exo 2', sans-serif;
+	font-weight: 400;
+	font-size: 1.5em;
+	margin-bottom: 10px;
+	color: #222222;
+}
+
+.email-container{
+	max-width: 400px;
+	background-color: rgba(255,255,255,0.5);
+	text-align: center;
+	padding: 30px;
+	border-radius: 0 20px;
+	color: #222222;
+	margin-bottom: 30px;
+}
+
+.perfil-email h3{
+	font-family: 'Exo 2', sans-serif;
+	font-weight: 400;
+	font-size: 1.3em;
+	color: #222222;
+}
+
+.perfil-botoes{
+	max-width: 400px;
+	margin: 30px auto;
+	margin-top: 50px;
+}
+
+.editar{
+	width: 120px;
+	height: 40px;
+	background-color: rgba(255,255,255,0.5);
+	margin: 15px 0;
+	display: block;
+	text-align: center;
+	padding: 10px 0;
+	border-radius: 0 20px;
+	color: #222222;
+	float: left;
+}
+
+.projetos{
+	width: 120px;
+	height: 40px;
+	background-color: rgba(255,255,255,0.5);
+	margin: 15px 0;
+	display: block;
+	text-align: center;
+	padding: 10px 0;
+	border-radius: 0 20px;
+	color: #222222;
+	float: left;
+	margin-left: 20px;
+}
+
+.rendimento{
+	width: 120px;
+	height: 40px;
+	background-color: #A85A67;
+	margin: 15px 0;
+	display: block;
+	text-align: center;
+	padding: 10px 0;
+	border-radius: 0 20px;
+	color: #222222;
+	float: left;
+	margin-left: 20px;
+}
+
+.perfil-botoes a{
+	text-decoration: none;
+	color: #222222;
+	font-family: 'Exo 2', sans-serif;
+	font-weight: 400;
+}
+
+.nseimais{
+	width: 400px;
+	margin-top: -400px;
+	margin-left: 350px;
+}

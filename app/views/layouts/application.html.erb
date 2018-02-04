@@ -6,19 +6,69 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Exo+2:200,400,700" rel="stylesheet">
+
   </head>
 
   <body>
     <%= render "layouts/avisos" %>
     <% if logged_in? %>
-	<p>
-	    Olá <%= current_user.name %>!
-      <%= link_to "Membros", users_path %>
-      <%= link_to "Diretorias", directions_path %>
-      <%= link_to "Projetos", projects_path %>
-	    <%= link_to "Sair", logout_path, method: :delete %>
-  </p>
+    <div class="wrapper">
+      <div class="header">
+		  <%= image_tag("logo-in-resized.png",  alt: "Logo In", class: "logo-IN-Logado") %>
+        <div class="container1">
+          <div class = "navbar-container">
+            <div class="navbar">
+              <%= link_to "Sair", logout_path, method: :delete %>
+              <a href = "#">Perfil</a>
+
+              <div class="dropdown">
+                <a class="dropbtn">Projetos</a>
+                <div class="dropdown-content myDropdown">
+                  <a href="#">Atuais</a>
+                  <a href="#">Concluídos</a>
+                </div>
+              </div>
+
+              <div class="dropdown">
+                <a class="dropbtn">Diretorias</a>
+                <div class="dropdown-content myDropdown">
+                  <a href="#">Presidência</a>
+                  <a href="#">Gestão de<br>Pessoas</a>
+                </div>
+              </div>
+
+              <div class="dropdown">
+                <a class="dropbtn">Células</a>
+                <div class="dropdown-content myDropdown">
+                  <a href="#">Criação</a>
+                  <a href="#">Comercial</a>
+                  <a href="#">Esqueci</a>
+                </div>
+              </div>
+
+              <div class="dropdown">
+                <a class="dropbtn">Membros</a>
+                <div class="dropdown-content myDropdown">
+                  <a href="#">Lobos</a>
+                  <a href="#">Times</a>
+                </div>
+              </div>
+
+              <div class="dropdown">
+                <a class="dropbtn">Metas</a>
+                <div class="dropdown-content myDropdown">
+                  <a href="#">Atemporais</a>
+                  <a href="#">Temporais</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
 	<% end %>
     <%= yield %>
+    </div>
   </body>
 </html>
