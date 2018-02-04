@@ -1,16 +1,34 @@
-*{
+//
+//
+// Sumario:
+//
+//
+// 1.0 Geral
+
+// 2.0 Header
+// 	2.1 Menu-Nav
+
+// 3.0 Login
+
+// 4.0 Cadastro
+
+// 5.0 Perfil
+
+
+//------------------------------------ 1.0 Geral
+*
+{
 	box-sizing: border-box;
 	font-family: 'Exo 2', sans-serif;
 	margin: 0;
 	padding: 0;
 }
 
-/* Login */
-
 body{
 	color: #E5E5EC;
 	font-family: 'Exo 2', sans-serif;
 }
+
 
 .logo1{
 	position: relative;
@@ -79,39 +97,8 @@ button{
     margin-bottom: 10px;
 }
 
-.lobo{
-	display: block;
-	max-width: 100px;
-	margin: 30px auto;
-}
 
-#login-button{
-	margin-bottom: 20px;
-}
-
-.blue-button{
-	font-size: 1.4em;
-  padding: 5px 15px;
-	background-color: rgba(5,5,15,0.5);
-	color: #9F9EA3;
-	display: block;
-	margin: 10px auto;
-}
-
-#cadastro-button{
-	width: 140px;
-}
-
-.blue-long-text{  /*Serve apenas para reduzir o tamanho do texto do botão pra manter a consistência*/
-  font-size: 1em;
-  padding: 5px 0;
-	background-color: rgba(5,5,15,0.5);
-	color: #9F9EA3;
-}
-
-
-
-/*---- Header ----*/
+//---------------------------- 2.0 Header
 
 /* Mudei muita coisa, incluindo tamanho, posição e etc.
 	O position relaative serve para interação com o submenu, sendo que a absolute removia a altura da div em relação às sections abaixo.
@@ -154,7 +141,7 @@ button{
 }
 
 
-/* ------------------- Aqui começa o código do drop-down menu, baseado em: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_dropdown_navbar_click */
+/* ----------------------- 2.1 Menu-Nav, baseado em: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_dropdown_navbar_click */
 
 .navbar-container {
 	max-width: 920px;
@@ -187,7 +174,7 @@ button{
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    width: 120px;
+    width: 100px;
     border-radius: 5px 5px 0 0;
 }
 
@@ -218,7 +205,7 @@ button{
     position: absolute;
     top: 100%;
     background-color: #f9f9f9;
-    width: 120px;
+    width: 100px;
     border-radius: 0 0 5px 5px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -244,7 +231,161 @@ button{
 
 /*-------------------------- Aqui termina o código copiado do drop menu */
 
-/* Perfil */
+
+
+
+//----------------------------- 3.0 Login
+
+
+.lobo{
+	display: block;
+	max-width: 100px;
+	margin: 30px auto;
+}
+
+#login-button{
+	margin-bottom: 20px;
+}
+
+.blue-button{
+	font-size: 1.4em;
+  	padding: 5px 15px;
+	background-color: rgba(5,5,15,0.5);
+	color: #9F9EA3;
+	display: block;
+	margin: 10px auto;
+}
+
+#cadastro-button{
+	width: 140px;
+}
+
+.blue-long-text{  /*Serve apenas para reduzir o tamanho do texto do botão pra manter a consistência*/
+  font-size: 1em;
+  padding: 5px 0;
+	background-color: rgba(5,5,15,0.5);
+	color: #9F9EA3;
+}
+
+
+//--------------------------------- 4.0 Cadastro
+
+.cadastro{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.form .users-new{
+  padding: 30px 0;
+}
+
+input:hover{
+  width: 300px;
+  color: #9F9EA3;
+  background-color: rgba(5,5,5,0);
+  font-weight: 700;
+  font-style: italic;
+}
+
+select{
+  display: block;
+  outline: 0;
+  width: 250px;
+  border: 1px solid #9F9EA3;
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin: 0 auto 10px auto;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  color: #9F9EA3;
+  background-color: rgba(5,5,5,0);
+  font-style: none;
+}
+
+
+.botoes input{
+  outline: 0;
+  background-color: #E5E5EC;
+  border: 0;
+  border-radius: 10px;
+  width: 250px;
+  cursor: pointer;
+  font-size: 1.4em;
+  padding: 10px 15px;
+  color: #222222;
+  display: block;
+  margin: 10px auto;
+  font-style: normal;
+}
+
+.users-new-voltar{
+  outline: 0;
+  border: 0;
+  border-radius: 10px;
+  width: 250px;
+  cursor: pointer;
+  font-size: 1.5em;
+  padding: 10px 15px;
+  background-color: rgba(5,5,15,0.5);
+  color:#9F9EA3;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 300;
+}
+
+#user_avatar{
+  background-color: rgba(5,5,15,0.5);
+  width: 480px;
+  border: 0;
+  text-align: right;
+  font-weight: 300;
+}
+
+.field-avatar input[type='file']{
+  display: none;
+}
+
+.field-avatar label{
+  outline: 0;
+  border: 0;
+  border-radius: 10px;
+  width: 250px;
+  cursor: pointer;
+  font-size: 1.5em;
+  padding: 10px 15px;
+  background-color: rgba(5,5,15,0.5);
+  color:#9F9EA3;
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 300;
+}
+
+.file-name{
+  outline: 0;
+  border-radius: 10px;
+  width: 250px;
+  height: 100%;
+  font-size: 1em;
+  padding: 10px 15px;
+  color: #9F9EA3;
+  background-color: rgba(5,5,15,0.5);
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+}
+
+
+
+
+//----------------------------- 5.0 Perfil
 
 .perfil{
 	max-width: 920px;
@@ -261,127 +402,33 @@ button{
 .perfil-foto{
 	width: 300px;
 	margin-right: 0;
+	float: left;
+}
+
+.perfil-container::before,
+.perfil-container::after{
+	content: "";
+	display: table;
+	clear: both;
 }
 
 .perfil-foto button{
-	margin: 0 auto;
 	display: block;
-	margin-bottom: 10px;
-	max-width: 230px;
-	margin: 10px 50px;
+	margin: 10px auto;
+	width: 200px;
 	background-color: rgba(255,255,255,0.5);
 
 }
 
 .foto{
 	max-width: 230px;
-	margin: 20px 50px;
-	margin-bottom: 10px;
-	padding: 30px 0;
+	margin: 30px 50px;
 }
 
-
-.cargos-container{
-	max-width: 400px;
-	background-color: rgba(255,255,255,0.5);
-	text-align: center;
-	padding: 30px;
-	border-radius: 0 20px;
-}
-
-.perfil h2{
-	font-weight: 700;
-	margin-bottom: 30px;
-}
-
-.perfil-nome{
-	width: 300px;
-	margin: 0 auto;
-	text-align: center;
-	margin-top: 20px;
-}
-
-.cargos h3{
-	font-family: 'Exo 2', sans-serif;
-	font-weight: 400;
-	font-size: 1.5em;
-	margin-bottom: 10px;
-	color: #222222;
-}
-
-.email-container{
-	max-width: 400px;
-	background-color: rgba(255,255,255,0.5);
-	text-align: center;
-	padding: 30px;
-	border-radius: 0 20px;
-	color: #222222;
-	margin-bottom: 30px;
-}
-
-.perfil-email h3{
-	font-family: 'Exo 2', sans-serif;
-	font-weight: 400;
-	font-size: 1.3em;
-	color: #222222;
-}
-
-.perfil-botoes{
-	max-width: 400px;
-	margin: 30px auto;
-	margin-top: 50px;
-}
-
-.editar{
-	width: 120px;
-	height: 40px;
-	background-color: rgba(255,255,255,0.5);
-	margin: 15px 0;
-	display: block;
-	text-align: center;
-	padding: 10px 0;
-	border-radius: 0 20px;
-	color: #222222;
-	float: left;
-}
-
-.projetos{
-	width: 120px;
-	height: 40px;
-	background-color: rgba(255,255,255,0.5);
-	margin: 15px 0;
-	display: block;
-	text-align: center;
-	padding: 10px 0;
-	border-radius: 0 20px;
-	color: #222222;
-	float: left;
-	margin-left: 20px;
-}
-
-.rendimento{
-	width: 120px;
-	height: 40px;
-	background-color: #A85A67;
-	margin: 15px 0;
-	display: block;
-	text-align: center;
-	padding: 10px 0;
-	border-radius: 0 20px;
-	color: #222222;
-	float: left;
-	margin-left: 20px;
-}
 
 .perfil-botoes a{
 	text-decoration: none;
 	color: #222222;
 	font-family: 'Exo 2', sans-serif;
 	font-weight: 400;
-}
-
-.nseimais{
-	width: 400px;
-	margin-top: -400px;
-	margin-left: 350px;
 }
