@@ -7,23 +7,22 @@ $(document).ready(function(){
    });
    
    /* Função para controlar o sub-menu. Ao clickar, adiciona-se a classe show que põe ele em display block */
-   $(".dropdown").click(function(e){
+   $(document).on("click", ".dropdown", function (e) {
        $(".dropdown-content").removeClass("show");
        $(this).children(".myDropdown").toggleClass("show");
    });
    
   $(document).click(function(event) {
       if(!$(event.target).closest(".dropdown").length){
-      console.log("Porra");
           $(".dropdown-content").removeClass("show");
       }
   });
   
-  /*código copiado para o menu hambúrguer*/
+  /*código copiado para o menu hambúrguer e cascade*/
   
-  $('.bt-menu').on('click', function(e) {
-    e.preventDefault();
+  $(document).on('click', ".bt-menu", function(e) {
     $('body').toggleClass('menu-open');
+    $(".cascade-ul").toggleClass( "loading" );
   });
   
 });

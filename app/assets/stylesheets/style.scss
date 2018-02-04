@@ -151,10 +151,10 @@ button{
 }
 
 .navbar {
-	margin-top: 40px;
-    overflow: hidden;
-    font-family: Arial;
-    float: right;
+  margin-top: 40px;
+  overflow: hidden;
+  font-family: Arial;
+  float: right;
 }
 
 .navbar-container::after {
@@ -170,47 +170,47 @@ button{
 }
 
 .navbar a {
-    float: right;
-    font-size: 16px;
-    color: white;
-    text-align: center;
-    padding: 20px 16px;
-    text-decoration: none;
-    width: 110px;
-    border-radius: 5px 5px 0 0;
+  float: right;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 20px 16px;
+  text-decoration: none;
+  width: 110px;
+  border-radius: 5px 5px 0 0;
 }
 
 
 .dropdown {
-    float: right;
-    overflow: hidden;
+  float: right;
+  overflow: hidden;
 }
 
 .dropdown .dropbtn {
-    cursor: pointer;
-    font-size: 0.75em;
-    border: none;
-    outline: none;
-    color: white;
-    padding: 20px 16px;
-    background-color: inherit;
-    font: inherit;
-    margin: 0;
+  cursor: pointer;
+  font-size: 0.75em;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 20px 16px;
+  background-color: inherit;
+  font: inherit;
+  margin: 0;
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
-    background-color: #222222;
+  background-color: #222222;
 }
 
 .dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    background-color: #f9f9f9;
-    width: 110px;
-    border-radius: 0 0 5px 5px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+  display: none;
+  position: absolute;
+  top: 100%;
+  background-color: #f9f9f9;
+  width: 110px;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 10;
 }
 
 .dropdown-content a {
@@ -241,6 +241,7 @@ $hamgurger-bar-spacing     : 5px;
 $hamgurger-transition-speed: 0.4s;
 
 .bt-menu {
+  display: none;
   position: absolute;
   top: 49%;
   left: 25vw;
