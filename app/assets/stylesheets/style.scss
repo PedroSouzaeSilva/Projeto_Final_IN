@@ -149,7 +149,7 @@ button{
 }
 
 .navbar {
-	margin-top: 53px;
+	margin-top: 40px;
     overflow: hidden;
     font-family: Arial;
     float: right;
@@ -172,9 +172,9 @@ button{
     font-size: 16px;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 20px 16px;
     text-decoration: none;
-    width: 100px;
+    width: 110px;
     border-radius: 5px 5px 0 0;
 }
 
@@ -190,7 +190,7 @@ button{
     border: none;
     outline: none;
     color: white;
-    padding: 14px 16px;
+    padding: 20px 16px;
     background-color: inherit;
     font: inherit;
     margin: 0;
@@ -205,7 +205,7 @@ button{
     position: absolute;
     top: 100%;
     background-color: #f9f9f9;
-    width: 100px;
+    width: 110px;
     border-radius: 0 0 5px 5px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -226,6 +226,83 @@ button{
 
 .show {
     display: block;
+}
+
+/*---------------------------código copiado para o menu hambúrguer */
+
+$hamburger-button-size     : 50px;
+$hamburger-button-radius   : 4px;
+$hamburger-bar-color       : #eeeeee;
+$hamgurger-bar-width       : 32px;
+$hamgurger-bar-height      : 5px;
+$hamgurger-bar-spacing     : 5px;
+$hamgurger-transition-speed: 0.4s;
+
+.bt-menu {
+  position: absolute;
+  top: 49%;
+  left: 25vw;
+  margin: auto;
+  border: none;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  border-radius: $hamburger-button-radius;
+  width: $hamburger-button-size;
+  height: $hamburger-button-size;
+  transition: $hamgurger-transition-speed / 2;
+
+  &:hover, &:focus {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+
+  &:active, &:focus {
+    outline: none;
+  }
+
+  .hamburguer {
+    width: $hamgurger-bar-width;
+    height: ($hamgurger-bar-height * 3) + ($hamgurger-bar-spacing * 2);
+    transition: $hamgurger-transition-speed;
+
+    &, .bar {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+    }
+
+    .bar {
+      width: $hamgurger-bar-width;
+      height: $hamgurger-bar-height;
+      background: $hamburger-bar-color;
+      transition: $hamgurger-transition-speed / 2;
+      outline: 1px solid transparent;
+    }
+
+    .bar-1 {
+      transform: rotate(0) translate3d(0, -($hamgurger-bar-height * 2), 0);
+    }
+    
+    .bar-3 {
+      transform: rotate(0) translate3d(0, ($hamgurger-bar-height * 2), 0);
+    }
+
+    .menu-open & {
+      transform: rotate(180deg);
+
+      .bar-1 { transform: rotate(45deg) translate3d(0, 0, 0); }
+      .bar-2 { opacity: 0; }
+      .bar-3 { transform: rotate(-45deg) translate3d(0, 0, 0); }
+    }
+  }
 }
 
 
