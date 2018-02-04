@@ -42,6 +42,8 @@ class ProjectsController < ApplicationController
   def update
     respond_to do |format|
       if @project.update(project_params)
+        tp = TeamProject.new(team_id: params[:team_id], project_id: @project.id)
+        tp.save
         format.html { redirect_to @project, notice: 'Project was successfully updated.' }
         format.json { render :show, status: :ok, location: @project }
       else
