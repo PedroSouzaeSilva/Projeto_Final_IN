@@ -388,21 +388,24 @@ select{
 //----------------------------- 5.0 Perfil
 
 .perfil{
+	width: 100%;
 	max-width: 920px;
 	margin: 40px auto;
 }
 
 .perfil-container{
-	width: 800px;
+	position: relative;
+	width:100%;
+	max-width: 800px;
 	background-color: rgba(20,5,50,0.3);
 	border-radius: 20px;
 	margin: 0 auto;
 }
 
 .perfil-foto{
-	width: 300px;
 	margin-right: 0;
 	float: left;
+	margin: 30px;
 }
 
 .perfil-container::before,
@@ -421,10 +424,41 @@ select{
 }
 
 .foto{
-	max-width: 230px;
-	margin: 30px 50px;
+	max-width: 250px;
 }
 
+.perfil-dados {
+	float: left;
+	margin-left: 15%;
+}
+
+.perfil-nome::before,
+.perfil-nome::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.perfil-nome {
+	margin: 20px auto;
+	text-align: center;
+}
+
+.perfil-email {
+	background-color: #eeeeee;
+	color: #222222;
+	margin: 10px auto;
+	text-align: center;
+	padding: 20px;
+	border-radius: 0 15px 0 15px;
+}
+
+.perfil-email::before,
+.perfil-email::after {
+	content: "";
+	display: table;
+	clear: both;
+}
 
 .perfil-botoes a{
 	text-decoration: none;
