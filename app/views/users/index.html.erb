@@ -19,7 +19,7 @@
     <tbody class="user-body">
         <% @users.each do |user| %>
           <tr>
-            <td>  <%= image_tag user.avatar.thumb.url if !user.avatar.nil? %></td>
+            <td><%= image_tag user.avatar.thumb.url if !user.avatar.nil? %></td>
             <td><%= user.name %></td>
             <td><%= user.email %></td>
             <td><% user.occupations.each do |occupation| %>

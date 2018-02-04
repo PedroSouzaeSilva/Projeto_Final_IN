@@ -41,7 +41,9 @@
           <div class = "navbar-container">
             <div class="navbar">
               <%= link_to "Sair", logout_path, method: :delete %>
-              <%= link_to 'Perfil',  users_path , :class=> "perfil-navbar"%>
+              <% if logged_in? %>
+                <%= link_to 'Perfil', current_user, :class=> "perfil-navbar"%>
+              <% end %>
               
               <div class="dropdown">
                 <a class="dropbtn">Projetos</a>
@@ -55,23 +57,26 @@
                 <a class="dropbtn">Diretorias</a>
                 <div class="dropdown-content myDropdown">
                   <a href="#">Presidência</a>
+                  <a href="#">Processos</a>
                   <a href="#">Gestão de<br>Pessoas</a>
+                  <a href="#">Marketing</a>
+                  <a href="#">Financeiro</a>
                 </div>
               </div>
 
               <div class="dropdown">
                 <a class="dropbtn">Células</a>
                 <div class="dropdown-content myDropdown">
+                  <a href="#">Análise</a>
                   <a href="#">Criação</a>
                   <a href="#">Comercial</a>
-                  <a href="#">Esqueci</a>
                 </div>
               </div>
 
               <div class="dropdown">
                 <a class="dropbtn">Membros</a>
                 <div class="dropdown-content myDropdown">
-                  <%= link_to 'Lobos', @user, :class=> "users-navbar"%>
+                  <%= link_to 'Lobos', users_path, :class=> "users-navbar"%>
                   <a href="#">Times</a>
                 </div>
               </div>
