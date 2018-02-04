@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nome:</strong>
   <%= @user.name %>
 </p>
 
@@ -12,7 +12,6 @@
 <p>
   <strong>Cargo(s):</strong>
   <% @user.occupations.each do |occupation| %>
-
     <p><%= occupation.name_occu %></p>
   <% end %>
 </p>
