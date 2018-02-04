@@ -3,10 +3,10 @@
       <div class="perfil-container">
         <div class="perfil-foto">
           <%= image_tag @user.avatar.thumb.url, alt: "Foto de Perfil", class: "foto" if !@user.avatar.nil?%>
-          <button type="submit"><%= link_to 'Edit', edit_user_path(@user) %></button>
+          <button type="submit"><%= link_to 'Editar', edit_user_path(@user) %></button>
           <button type="submit">Permissões</button>
         </div>
-        <div class="nseimais">
+        <div class="perfil-atrib">
           <div class="perfil-nome">
             <h2><%= @user.name %></h2>
           </div>
@@ -24,10 +24,10 @@
           </div>
         </div>
         <div class="perfil-botoes">
-          <div class="editar">
+          <div class="projetos">
             <a href="#">Editar</a>
           </div>
-          <div class="projetos">
+          <div class="tarefa">
             <a href="#">Projetos</a>
           </div>
           <div class="rendimento">
@@ -37,5 +37,6 @@
         </div>
       </div>
     </section>
-    
-    <%= link_to 'Back', users_path %>
+    <div class="perfil-voltar">
+      <%= link_to 'Voltar', users_path %>
+    </div>
