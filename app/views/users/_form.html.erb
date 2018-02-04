@@ -24,7 +24,7 @@
 
         <%= form.label "Diretoria" %>
         <%= select("", "direction_id", Direction.all.collect {|direction| [ direction.name,
-            direction.id ] }, {include_blank: "Diretoria"}) %>
+          direction.id ] }, {include_blank: "Diretoria"}) %>
 
       <% end %>
     <% end %>
