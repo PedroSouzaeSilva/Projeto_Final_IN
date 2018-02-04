@@ -6,19 +6,20 @@
 		</div>
 	</section>
   <section class="login">
-	  <div class="container">	
+	  <div class="container">
       <%= form_for :sessions, class: "form", url: :login do |form| %>
-      
+
         <%= form.email_field :email, :placeholder => "E-mail" %>
-        
+
         <%= form.password_field :password, :placeholder=> "Senha" %>
-      	  
-        <%= form.submit%>
+
+        <%= form.submit "Entrar"%>
+
       <% end %>
+
       <div class = "botoes">
   			<button type="button" class = "blue-button blue-long-text" id="esqueci-button">Esqueci minha senha</button>
   			<%= button_to "Cadastro", new_user_path(@user), :id => "cadastro-button", :class => "blue-button", :method => :get %>
   		</div>
 	  </div>
 	</section>
-  

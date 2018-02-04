@@ -16,17 +16,18 @@
   <section class="cadastro">
     <%= image_tag("lobo.png", alt:"Lobo", class:"lobo") %>
 
-<!--
-      </% if current_user.admin %>
-      </%= form.label "Cargo" %>
-      </%= select("", "occupation_id", Occupation.all.collect {|occupation| [ occupation.name_occu,
-        occupation.id ] }, {include_blank: "Cargo"}) %>
+    <% if logged_in? %>
+      <% if current_user.admin %>
+        <%= form.label "Cargo" %>
+        <%= select("", "occupation_id", Occupation.all.collect {|occupation| [ occupation.name_occu,
+          occupation.id ] }, {include_blank: "Cargo"}) %>
 
-      </%= form.label "Diretoria" %>
-      </%= select("", "direction_id", Direction.all.collect {|direction| [ direction.name,
-        /  direction.id ] }, {include_blank: "Diretoria"}) %>
+        <%= form.label "Diretoria" %>
+        <%= select("", "direction_id", Direction.all.collect {|direction| [ direction.name,
+            direction.id ] }, {include_blank: "Diretoria"}) %>
 
-    </%end %>
+      <% end %>
+    <% end %>
   <br>
 -->
 
@@ -68,7 +69,7 @@
 
 
         <div class="botoes users-new">
-          <%= form.submit %>
+          <%= form.submit "Criar Conta"%>
         </div>
       </div>
     </div>

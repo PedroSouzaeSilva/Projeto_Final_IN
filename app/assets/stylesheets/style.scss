@@ -14,6 +14,8 @@
 
 // 5.0 Perfil
 
+// 6.0 Index Usuário
+
 
 //------------------------------------ 1.0 Geral
 *
@@ -94,7 +96,7 @@ button{
 	width: 250px;
 	cursor: pointer;
 	font-size: 1.3em;
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 
@@ -103,10 +105,10 @@ button{
 /* Mudei muita coisa, incluindo tamanho, posição e etc.
 	O position relaative serve para interação com o submenu, sendo que a absolute removia a altura da div em relação às sections abaixo.
 	Então, botei na relative para não ficar por cima da section.
-	
+
 	Mudei a classe da Logo para logo-IN-Logado, pois ela tem um  comportamento diferente se o usuário está logado ou não, pois o menu
 	interage com ela e talz. A logo1 continua funcionando normalmente para as páginas não-logadas.
-	
+
 */
 .header{
 	width: 100%;
@@ -347,19 +349,44 @@ $hamgurger-transition-speed: 0.4s;
 
 //--------------------------------- 4.0 Cadastro
 
-.cadastro{
+.logo1{ // logo superior esquerdo
+  margin: 30px 0 20px 30px;
+}
+
+.cadastro{ // section geral do cadastro
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
+.lobo{ // imagem a cima do cadastro
+  display: block;
+  max-width: 100px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
 
-.form .users-new{
+.form{ // area principal do formulario (de nome a criar usuario)
   padding: 30px 0;
 }
 
-input:hover{
+.cadastro input{ // todos os inputs da area cadastro
+  display: block;
+  outline: 0;
+  width: 250px;
+  border: 1px solid #9F9EA3;
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin: 0 auto 10px auto;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  color: #E5E5EC;
+  background-color: rgba(5,5,5,0);
+}
+
+.fild input:hover{
   width: 300px;
   color: #9F9EA3;
   background-color: rgba(5,5,5,0);
@@ -367,7 +394,7 @@ input:hover{
   font-style: italic;
 }
 
-select{
+.cadastro select{ // todo select da area de cadastro
   display: block;
   outline: 0;
   width: 250px;
@@ -380,11 +407,11 @@ select{
   font-size: 18px;
   color: #9F9EA3;
   background-color: rgba(5,5,5,0);
-  font-style: none;
+  font-style: italic;
 }
 
 
-.botoes input{
+.botoes input{ // botao de criar usuario
   outline: 0;
   background-color: #E5E5EC;
   border: 0;
@@ -399,7 +426,13 @@ select{
   font-style: normal;
 }
 
-.users-new-voltar{
+.botoes input:focus{
+  width: 250px;
+  color:#222222;
+  background-color: #E5E5EC;
+}
+
+.wrapper-cadastro a{ // botao de voltar da area de cadastro
   outline: 0;
   border: 0;
   border-radius: 10px;
@@ -416,19 +449,11 @@ select{
   font-weight: 300;
 }
 
-#user_avatar{
-  background-color: rgba(5,5,15,0.5);
-  width: 480px;
-  border: 0;
-  text-align: right;
-  font-weight: 300;
-}
-
-.field-avatar input[type='file']{
+.field-avatar input[type='file']{ // botao original de selecionar imagem
   display: none;
 }
 
-.field-avatar label{
+.field-avatar label{ // area de selecionar imagem
   outline: 0;
   border: 0;
   border-radius: 10px;
@@ -445,7 +470,7 @@ select{
   font-weight: 300;
 }
 
-.file-name{
+.file-name{ // area de confirmacao de iamgem selecionada
   outline: 0;
   border-radius: 10px;
   width: 250px;
@@ -458,8 +483,6 @@ select{
   margin: 10px auto;
   text-align: center;
 }
-
-
 
 
 //----------------------------- 5.0 Perfil
@@ -542,4 +565,193 @@ select{
 	color: #222222;
 	font-family: 'Exo 2', sans-serif;
 	font-weight: 400;
+}
+
+/* ------------------------ 6.0 Index Usuário */
+
+// 3.0 Index Usuario
+
+.index-users h1{ // "titulo" da pagina
+  font-size: 3em;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.index-users{ // area geral dos perfis
+  width: 920px;
+  display: block;
+  margin: 0 auto;
+}
+
+.users-bar-container{ // area dos titulos das categorias
+  background-color: #222222;
+  color: #E5E5EC;
+  width: 920px;
+  font-size: 1.5em;
+  display: inline-table;
+  font-weight: 400;
+}
+
+.users-bar-container th{ // font dos titulos das categorias
+  font-weight: 400;
+}
+
+.user-body{ // area de cada usuario
+  width: 920px;
+  display: inline-table;
+  appearance: none;
+  outline: 0;
+  background-color: #E5E5EC;
+  border: 0;
+  padding: 10px 15px;
+  color: #222222;
+  border-radius: 10px;
+  font-size: 1em;
+  margin-top: 30px;
+}
+
+.button-new-user a{ // botao de novo usuario
+  font-size: 1.4em;
+  padding: 5px 15px;
+  background-color: #222222;
+  border-radius: 10px;
+  color: #E5E5EC;
+  text-decoration: none;
+  float: right;
+  margin-top: 30px;
+}
+
+
+
+
+//------------------ ignorar daqui para baixo
+.perfil-mutavel{
+
+	width: 100%;
+}
+
+
+.perfil-opcoes{
+	width: 90%;
+	margin: 30px auto;
+	margin-top: 50px;
+}
+
+.projetos{
+	width: 100%;
+	background-color: rgba(255,255,255,0.5);
+	margin: 15px 0;
+	display: block;
+	text-align: center;
+	padding: 10px 0;
+	border-radius: 0 20px;
+	color: #222222;
+	float: left;
+}
+
+.tarefa{
+	width: 100%;
+	background-color: rgba(255,255,255,0.5);
+	margin: 15px 0;
+	display: block;
+	text-align: center;
+	padding: 10px 0;
+	border-radius: 0 20px;
+	color: #222222;
+	float: left;
+}
+
+.rendimento{
+	width: 100%;
+	background-color: #A85A67;
+	margin: 15px 0;
+	display: block;
+	text-align: center;
+	padding: 10px 0;
+	border-radius: 0 20px;
+	color: #222222;
+	float: left;
+}
+
+
+
+
+
+
+.proj h2{
+	width: 240px;
+	float: left;
+	margin-top: 30px;
+}
+
+.proj-and1 h3{
+	width: 240px;
+	float: left;
+	margin-bottom: 30px;
+	font-weight: 400;
+}
+
+.proj-and2 h3{
+		width: 240px;
+		float: left;
+		font-weight: 400;
+		margin-bottom: 30px;
+}
+
+.tar h2{
+	width: 240px;
+	float: left;
+	margin-top: 30px;
+}
+
+.tar-and1 h3{
+	width: 240px;
+	float: left;
+	margin-bottom: 30px;
+	font-weight: 400;
+}
+
+.tar-and2 h3{
+		width: 240px;
+		float: left;
+		font-weight: 400;
+		margin-bottom: 30px;
+}
+
+.rend h2{
+	width: 240px;
+	float: left;
+	margin-top: 30px;
+}
+
+.rend h4{
+	padding: 20px;
+	font-size: 1.4em;
+}
+
+
+.rend-and1 h3{
+	width: 240px;
+	float: left;
+	font-weight: 400;
+	font-size: 2em;
+	padding-top: 10px;
+}
+
+.rend-and2{
+	width: 240px;
+	float: left;
+}
+
+.rend-and2 h3{
+	font-weight: 400;
+	margin-bottom: 30px;
+}
+
+.rend-and3 h3{
+	width: 240px;
+	float: left;
+	font-weight: 400;
+	font-size: 2em;
+	padding-top: 10px;
 }
