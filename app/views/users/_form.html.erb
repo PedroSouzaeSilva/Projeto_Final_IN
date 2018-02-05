@@ -2,7 +2,7 @@
   <% if user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-      
+
       <ul>
       <% user.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -10,13 +10,12 @@
       </ul>
     </div>
   <% end %>
-  
+
   <section class="cadastro">
 
     <div class="field-avatar">
-      <label for="input-file", class="botao" >Selecionar imagem...</label>
+    <label for="avatar", class="botao" >Selecionar imagem...</label>
      <%= form.file_field :avatar, id: :avatar %>
-      <input id='input-file' type='file' value=''></input>
       <div class="file-name">
         <span id='file-name'>Nenhuma Imagem Selecionada</span>
       </div>
@@ -39,11 +38,11 @@
             <%= form.label "Diretoria" %>
             <%= select("", "direction_id", Direction.all.collect {|direction| [ direction.name,
               direction.id ] }, {include_blank: "Diretoria"}) %>
-              
+
             <%= form.label "Cargo" %>
             <%= select("", "occupation_id", Occupation.all.collect {|occupation| [ occupation.name_occu,
                 occupation.id ] }, {include_blank: "Cargo"}) %>
-                
+
           <% end %>
         <% end %>
 
@@ -51,11 +50,11 @@
         <div class="field">
           <%= form.password_field :password, placeholder:"Senha", id: :usuario_password %>
         </div>
-        
+
         <div class="field">
           <%= form.password_field :password_confirmation, placeholder:"Confirme a senha", id: :usuario_password_confirmation %>
         </div>
-        
+
         <div class="botoes users-new">
           <%= form.submit "Criar Conta"%>
         </div>

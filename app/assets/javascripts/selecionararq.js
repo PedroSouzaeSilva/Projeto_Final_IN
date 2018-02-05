@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-  var $input = $('#input-file');
+  var $input = $('#avatar');
   var $fileName = $('#file-name');
 
   $input.change(function(){
