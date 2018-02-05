@@ -16,7 +16,6 @@
   <section class="cadastro">
     <%= image_tag("lobo.png", alt:"Lobo", class:"lobo") %>
 
-<<<<<<< HEAD
     <% if logged_in? %>
       <% if current_user.admin %>
         <%= form.label "Cargo" %>
@@ -34,9 +33,6 @@
     <% end %>
   <br>
 
-=======
-  <br>
->>>>>>> samiry
 
     <div class="field-avatar">
       <label for="input-file", class="botao" >Selecionar imagem...</label>
@@ -58,9 +54,6 @@
           <%= form.text_field :email, placeholder:"E-mail", id: :user_email %>
         </div>
 
-<<<<<<< HEAD
-        
-=======
 
         <% if logged_in? %>
           <% if current_user.admin %>
@@ -76,7 +69,6 @@
         <% end %>
 
 
->>>>>>> samiry
         <div class="field">
           <%= form.password_field :password, placeholder:"Senha", id: :usuario_password %>
         </div>
