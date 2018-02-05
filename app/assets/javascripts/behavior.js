@@ -5,7 +5,7 @@ $(document).ready(function(){
    $(document).on('mouseover', ".pop-up-container", function(e) {
        window.setTimeout(function(){
            $(".pop-up-container").fadeOut();
-       }, 300);
+       }, 1000);
    });
    
    

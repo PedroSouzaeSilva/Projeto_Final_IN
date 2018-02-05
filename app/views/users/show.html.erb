@@ -34,4 +34,5 @@
         </div>
       </div>
     </section>
-    <button type="submit" class = "perfil-voltar perfil-btn"><%= link_to 'Back', users_path %></button>
+    
+    <%= button_to "Voltar", users_path, :class => "blue-button perfil-voltar perfil-btn", :method => :get %>
