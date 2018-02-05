@@ -100,6 +100,11 @@ button{
   margin-bottom: 10px;
 }
 
+button a {
+  text-decoration: none;
+  color: #E5E5EC;
+}
+
 
 //-------------------------------1.1 Alertas e Notices
 
@@ -362,7 +367,7 @@ $hamgurger-transition-speed: 0.4s;
 
 .blue-button{
 	font-size: 1.4em;
-  	padding: 5px 15px;
+  padding: 5px 15px;
 	background-color: rgba(5,5,15,0.5);
 	color: #9F9EA3;
 	display: block;
@@ -388,10 +393,6 @@ $hamgurger-transition-speed: 0.4s;
 }
 
 .cadastro{ // section geral do cadastro
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .lobo{ // imagem a cima do cadastro
@@ -527,6 +528,11 @@ $hamgurger-transition-speed: 0.4s;
 	margin: 40px auto;
 }
 
+.perfil-btn a{
+  text-decoration: none;
+  color: #222222;
+}
+
 .perfil-container{
 	position: relative;
 	width:100%;
@@ -539,7 +545,8 @@ $hamgurger-transition-speed: 0.4s;
 .perfil-foto{
 	margin-right: 0;
 	float: left;
-	margin: 30px;
+	width: 30%;
+	margin: 30px 2.5% 30px 5%;
 }
 
 .perfil-container::before,
@@ -551,7 +558,7 @@ $hamgurger-transition-speed: 0.4s;
 
 .perfil-foto button{
 	display: block;
-	margin: 10px auto;
+	margin: 10px 0;
 	width: 200px;
 	background-color: rgba(255,255,255,0.5);
 
@@ -562,8 +569,9 @@ $hamgurger-transition-speed: 0.4s;
 }
 
 .perfil-dados {
-	float: left;
-	margin-left: 15%;
+	float: right;
+	width: 55%;
+	margin: 30px 5% 30px 2.5%;
 }
 
 .perfil-nome::before,
@@ -574,12 +582,13 @@ $hamgurger-transition-speed: 0.4s;
 }
 
 .perfil-nome {
-	margin: 20px auto;
+	margin: 0 auto 20px auto;
 	text-align: center;
 }
 
 .perfil-email {
 	background-color: #eeeeee;
+	opacity: 0.85;
 	color: #222222;
 	margin: 10px auto;
 	text-align: center;
@@ -594,28 +603,31 @@ $hamgurger-transition-speed: 0.4s;
 	clear: both;
 }
 
-.perfil-botoes a{
+.cargos-container {
+	background-color: #eeeeee;
+	opacity: 0.85;
+	color: #222222;
+	margin: 10px auto;
+	text-align: center;
+	padding: 15px;
+	border-radius: 0 15px 0 15px;
+}
+
+.perfil-infos {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.perfil-infos a{
 	text-decoration: none;
 	color: #222222;
 	font-family: 'Exo 2', sans-serif;
 	font-weight: 400;
 }
 
-.perfil-voltar a{ // botao "voltar" do perfil
-  outline: 0;
-  border: 0;
-  border-radius: 10px;
-  width: 250px;
-  cursor: pointer;
-  font-size: 1.5em;
-  padding: 10px 15px;
-  background-color: rgba(5,5,15,0.5);
-  color:#9F9EA3;
+.perfil-voltar {
   display: block;
   margin: 0 auto;
-  text-align: center;
-  text-decoration: none;
-  font-weight: 300;
 }
 
 

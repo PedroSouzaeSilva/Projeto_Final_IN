@@ -13,5 +13,6 @@
  *= require_tree .
  *= require_self
  *= require style.scss
- *= require zresponsivo.scss
+ *= require samiry.scss
+ *= require responsivo.scss
  */

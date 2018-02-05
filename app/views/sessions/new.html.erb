@@ -18,8 +18,12 @@
       <% end %>
 
       <div class = "botoes">
-  			<button type="button" class = "blue-button blue-long-text" id="esqueci-button">Esqueci minha senha</button>
+  			<button type="button" class = "blue-button blue-long-text" id="esqueci-button">
+  			  <%= link_to 'Esqueci minha senha', new_password_path %>
+  			</button>
   			<%= button_to "Cadastro", new_user_path(@user), :id => "cadastro-button", :class => "blue-button", :method => :get %>
   		</div>
 	  </div>
+	  
 	</section>
+</div>
