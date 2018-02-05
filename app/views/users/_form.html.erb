@@ -12,6 +12,7 @@
   <% end %>
   
   <section class="cadastro">
+
     <div class="field-avatar">
       <label for="input-file", class="botao" >Selecionar imagem...</label>
      <%= form.file_field :avatar, id: :user_avatar %>
@@ -31,7 +32,8 @@
         <div class="field">
           <%= form.text_field :email, placeholder:"E-mail", id: :user_email %>
         </div>
-        
+
+
         <% if logged_in? %>
           <% if current_user.admin %>
             <%= form.label "Diretoria" %>
@@ -44,7 +46,8 @@
                 
           <% end %>
         <% end %>
-        
+
+
         <div class="field">
           <%= form.password_field :password, placeholder:"Senha", id: :usuario_password %>
         </div>

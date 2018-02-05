@@ -27,6 +27,11 @@
 	padding: 0;
 }
 
+a{
+	text-decoration: none;
+	color: #E5E5EC;
+}
+
 body{
 	color: #E5E5EC;
 	font-family: 'Exo 2', sans-serif;
@@ -115,7 +120,7 @@ button a {
   top: 50%;
   left: 50%;
   z-index: 100;
-  
+
 }
 
 .notice-container,
@@ -429,22 +434,6 @@ $hamgurger-transition-speed: 0.4s;
   font-style: italic;
 }
 
-.cadastro select{ // todo select da area de cadastro
-  display: block;
-  outline: 0;
-  width: 250px;
-  border: 1px solid #9F9EA3;
-  border-radius: 10px;
-  padding: 10px 15px;
-  margin: 0 auto 10px auto;
-  display: block;
-  text-align: center;
-  font-size: 18px;
-  color: #9F9EA3;
-  background-color: rgba(5,5,5,0);
-  font-style: italic;
-}
-
 
 .botoes input{ // botao de criar usuario
   outline: 0;
@@ -681,6 +670,8 @@ $hamgurger-transition-speed: 0.4s;
 
 
 
+
+
 //------------------ ignorar daqui para baixo
 .perfil-mutavel{
 
@@ -729,30 +720,6 @@ $hamgurger-transition-speed: 0.4s;
 	color: #222222;
 	float: left;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 .proj h2{

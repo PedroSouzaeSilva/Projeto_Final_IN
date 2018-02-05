@@ -7,19 +7,6 @@
   .navbar div {
     display: none;
   }
-    
-}
-
-@media only screen and (max-width: 350px){
-
-  #hamb-button {
-    display: block;
-  }
-
-  .navbar div {
-    display: none;
-  }
-
 
   // Index Usuario
 
@@ -86,10 +73,9 @@
     width: 15px;
   }
 
-
   @media only screen and (max-width: 600px){
 
-    .index-users{
+    .index-users {
       width: 300px;
     }
 
@@ -139,7 +125,6 @@
       background-color: #222222;
       margin: 10px auto;
       margin-top: 30px;
-
     }
 
     .user-cargo{
@@ -177,22 +162,21 @@
       left: 10px;
     }
 
-    @media only screen and (max-width: 320px){
+      @media only screen and (max-width: 320px){
 
-      .cadastro input:focus{
-        width: 250px;
+        .cadastro input:focus{
+          width: 250px;
+        }
+
+        .login input:focus{
+          width: 250px;
+        }
+
+
+
+
+
       }
-
-      .login input:focus{
-        width: 250px;
-      }
-
-
-
-
-
-
-    }
 
   }
 

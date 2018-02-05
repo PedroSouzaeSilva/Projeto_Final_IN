@@ -1,0 +1,95 @@
+@charset "UTF-8";
+/* line 4, /home/samiry/Área de Trabalho/Grupo_Alfa/Projeto_Final_IN/app/assets/stylesheets/samiry.scss */
+.user-body {
+  position: relative;
+}
+
+/* line 8, /home/samiry/Área de Trabalho/Grupo_Alfa/Projeto_Final_IN/app/assets/stylesheets/samiry.scss */
+.user-foto img {
+  width: 150px;
+  height: 150px;
+}
+
+/* line 13, /home/samiry/Área de Trabalho/Grupo_Alfa/Projeto_Final_IN/app/assets/stylesheets/samiry.scss */
+.nome-email {
+  text-align: center;
+}
+
+/* line 17, /home/samiry/Área de Trabalho/Grupo_Alfa/Projeto_Final_IN/app/assets/stylesheets/samiry.scss */
+.user-nome {
+  margin-bottom: 50px;
+}
+
+/* line 21, /home/samiry/Área de Trabalho/Grupo_Alfa/Projeto_Final_IN/app/assets/stylesheets/samiry.scss */
+.user-nome a {
+  color: #222222;
+}
+
+/* line 25, /home/samiry/Área de Trabalho/Grupo_Alfa/Projeto_Final_IN/app/assets/stylesheets/samiry.scss */
+.user-body-nomemail {
+  width: 275px;
+}
+
+/* line 29, /home/samiry/Área de Trabalho/Grupo_Alfa/Projeto_Final_IN/app/assets/stylesheets/samiry.scss */
+.user-cargo {
+  width: 230px;
+  text-align: center;
+}
+
+/* line 34, /home/samiry/Área de Trabalho/Grupo_Alfa/Projeto_Final_IN/app/assets/stylesheets/samiry.scss */
+.user-button-edit img {
+  width: 30px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+/* line 41, /home/samiry/Área de Trabalho/Grupo_Alfa/Projeto_Final_IN/app/assets/stylesheets/samiry.scss */
+.user-button-delete img {
+  width: 20px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+/* line 48, /home/samiry/Área de Trabalho/Grupo_Alfa/Projeto_Final_IN/app/assets/stylesheets/samiry.scss */
+.user-times {
+  width: 230px;
+  text-align: center;
+}
+
+/* line 53, /home/samiry/Área de Trabalho/Grupo_Alfa/Projeto_Final_IN/app/assets/stylesheets/samiry.scss */
+.user-bar-foto {
+  width: 165px;
+  padding-left: 15px;
+}
+
+/* line 58, /home/samiry/Área de Trabalho/Grupo_Alfa/Projeto_Final_IN/app/assets/stylesheets/samiry.scss */
+.user-bar-nomemail {
+  width: 280px;
+}
+
+/* line 62, /home/samiry/Área de Trabalho/Grupo_Alfa/Projeto_Final_IN/app/assets/stylesheets/samiry.scss */
+.user-bar-cargos {
+  width: 230px;
+}
+
+/* line 66, /home/samiry/Área de Trabalho/Grupo_Alfa/Projeto_Final_IN/app/assets/stylesheets/samiry.scss */
+.user-bar-times {
+  width: 245px;
+  padding-right: 15px;
+}
+
+/* line 74, /home/samiry/Área de Trabalho/Grupo_Alfa/Projeto_Final_IN/app/assets/stylesheets/samiry.scss */
+.new-time {
+  max-width: 920px;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+
+/* line 81, /home/samiry/Área de Trabalho/Grupo_Alfa/Projeto_Final_IN/app/assets/stylesheets/samiry.scss */
+.new-time h1 {
+  margin: 0 auto;
+  display: block;
+}
