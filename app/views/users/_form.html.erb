@@ -36,7 +36,7 @@
 
     <div class="field-avatar">
       <label for="input-file", class="botao" >Selecionar imagem...</label>
-     <%= form.file_field :avatar, id: :user_avatar %>
+     <%= form.file_field :avatar, id: :avatar %>
       <input id='input-file' type='file' value=''></input>
       <div class="file-name">
         <span id='file-name'>Nenhuma Imagem Selecionada</span>
@@ -54,7 +54,7 @@
           <%= form.text_field :email, placeholder:"E-mail", id: :user_email %>
         </div>
 
-        
+
         <div class="field">
           <%= form.password_field :password, placeholder:"Senha", id: :usuario_password %>
         </div>

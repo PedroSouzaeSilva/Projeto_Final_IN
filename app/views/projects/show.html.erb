@@ -7,7 +7,7 @@
 
 <p>
   <strong>Prazo:</strong>
-  <%= @project.deadline %>
+  <%= @project.data_correta %>
 </p>
 
 <p>
@@ -24,8 +24,11 @@
       <% @project.teams.each do |team| %>
         <%= link_to team.name, team_path %>
       <% end %>
-
     </td>
+    <td><blockquote class="trello-board-compact">
+      <a href=<%= @project.trello %>>Trello Board</a>
+      </blockquote>
+   <script src="https://p.trellocdn.com/embed.min.js"></script></td>
 <br>
 
 <%= link_to 'Editar Projeto', edit_project_path(@project) %> |

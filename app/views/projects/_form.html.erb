@@ -37,6 +37,11 @@
     <%= form.text_area :content, id: :project_content %>
   </div>
 
+  <div class="field">
+    <%= form.label "Link do Trello" %>
+    <%= form.text_field :trello, id: :project_trello %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
