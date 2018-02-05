@@ -12,6 +12,6 @@
  *
  *= require_tree .
  *= require_self
- *= require style.css
  *= require style.scss
+ *= require zresponsivo.scss
  */

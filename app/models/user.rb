@@ -3,10 +3,15 @@ class User < ApplicationRecord
 
   mount_uploader :avatar, AvatarUploader
 
+  #Para relacionar users e teams
+  has_many :user_teams
+  has_many :teams, through: :user_teams
+
+  #Para relacionar users e directions
   has_many :user_directions
   has_many :directions, through: :user_directions
 
-
+  #Para relacionar users e occupations
   has_many :user_occupations
   has_many :occupations, through: :user_occupations
 

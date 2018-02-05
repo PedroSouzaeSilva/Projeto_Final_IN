@@ -7,29 +7,49 @@
     <div class="users-bar">
       <thead class="users-bar-container">
         <tr>
-          <th>Foto</th>
-          <th>Name/E-mail</th>
-          <th>Cargos</th>
-          <th>Times</th>
-          <th colspan="3"></th>
+          <th class="user-bar-foto">Foto</th>
+          <th class="user-bar-nomemail">Nome/E-mail</th>
+          <th class="user-bar-cargos">Cargos</th>
+          <th class="user-bar-times">Times</th>
+          <th colspan="2"></th>
         </tr>
       </thead>
     </div>
 
-    <tbody class="user-body">
+    <tbody>
         <% @users.each do |user| %>
-          <tr>
-            <td><%= user.name %></td>
-            <td><%= user.email %></td>
-            <td><%= link_to 'Show', user %></td>
-            <td><%= link_to 'Edit', edit_user_path(user) %></td>
-            <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <tr class="user-body">
+            <td class="user-foto">
+              <%= image_tag user.avatar.thumb.url if !user.avatar.nil? %>
+            </td>
+            <td class="nome-email">
+              <div class="user-body-nomemail">
+                <div class="user-nome">
+                  <%= link_to user.name, user %>
+                </div>
+                <%= user.email %>
+              </div>
+            </td>
+
+            <td class="user-cargo">
+              <% user.occupations.each do |occupation| %>
+              <%= occupation.name_occu %>
+              <p>-</p>
+              <% end %>
+            </td>
+
+            <td class="user-times">esperando ter algo aqui</td>
+
+            <td class="user-button-edit"><%= link_to image_tag("edit_icon.png", alt:"Editar"), edit_user_path(user) %></td>
+            <td class="user-button-delete"><%= link_to image_tag("delete-icon.png", alt:"Editar"), user, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+
           </tr>
         <% end %>
-    </tbody>
-  </table>
+      </tbody>
+    </table>
+
   <br>
   <div class="button-new-user">
-    <%= link_to 'New User', new_user_path %>
+    <%= link_to 'Novo Usuário', new_user_path %>
   </div>
 </section>

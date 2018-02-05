@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TesteProjetoFinal</title>
+    <title>ProjetoFinal</title>
     <%= csrf_meta_tags %>
-    
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Exo+2:200,400,700" rel="stylesheet">
-    
+
   </head>
 
   <body>
@@ -17,7 +17,7 @@
       <div class="header">
 		  <%= image_tag("logo-in-resized.png",  alt: "Logo In", class: "logo-IN-Logado") %>
         <div class="container1">
-          <button class="bt-menu dropdown-responsivo" title="Menu">
+          <button class="bt-menu dropdown-responsivo" title="Menu" id="hamb-button">
             <span class="hamburguer">
               <span class="bar bar-1"></span>
               <span class="bar bar-2"></span>
@@ -41,41 +41,46 @@
           <div class = "navbar-container">
             <div class="navbar">
               <%= link_to "Sair", logout_path, method: :delete %>
-              <%= link_to 'Perfil',  users_path , :class=> "perfil-navbar"%>
-              
+              <% if logged_in? %>
+                <%= link_to 'Perfil', current_user, :class=> "perfil-navbar"%>
+              <% end %>
+
               <div class="dropdown">
                 <a class="dropbtn">Projetos</a>
                 <div class="dropdown-content myDropdown">
-                  <a href="#"><%= link_to 'Atuais',  projects_path , :class=> "projects-navbar"%></a>
+                  <%= link_to 'Atuais',  projects_path , :class=> "projects-navbar"%>
                   <a href="#">Concluídos</a>
                 </div>
               </div>
-              
+
               <div class="dropdown">
                 <a class="dropbtn">Diretorias</a>
                 <div class="dropdown-content myDropdown">
                   <a href="#">Presidência</a>
+                  <a href="#">Processos</a>
                   <a href="#">Gestão de<br>Pessoas</a>
+                  <a href="#">Marketing</a>
+                  <a href="#">Financeiro</a>
                 </div>
               </div>
-              
+
               <div class="dropdown">
                 <a class="dropbtn">Células</a>
                 <div class="dropdown-content myDropdown">
+                  <a href="#">Análise</a>
                   <a href="#">Criação</a>
                   <a href="#">Comercial</a>
-                  <a href="#">Esqueci</a>
                 </div>
               </div>
-              
+
               <div class="dropdown">
                 <a class="dropbtn">Membros</a>
                 <div class="dropdown-content myDropdown">
-                  <a href="#"><%= link_to 'Lobos', @user, :class=> "users-navbar"%></a>
+                  <%= link_to 'Lobos', users_path, :class=> "users-navbar"%>
                   <a href="#">Times</a>
                 </div>
               </div>
-              
+
               <div class="dropdown">
                 <a class="dropbtn">Metas</a>
                 <div class="dropdown-content myDropdown">
@@ -83,7 +88,7 @@
                   <a href="#">Temporais</a>
                 </div>
               </div>
-              
+
             </div>
           </div>
         </div>
