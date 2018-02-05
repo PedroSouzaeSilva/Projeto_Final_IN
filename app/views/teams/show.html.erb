@@ -10,6 +10,7 @@
     <div class="nome-membros-time">
       <% @team.users.each do |user| %>
         <p><%= link_to user.name, user %></p>
+        <td><%= image_tag user.avatar.thumb.url if !user.avatar.nil? %></td>
         <br>
       <% end %>
     </div>
