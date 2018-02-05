@@ -7,15 +7,18 @@
       <%= @team.name %>
     </p>
 
-    <div class="nome-membros-time">
-      <% @team.users.each do |user| %>
-        <p><%= link_to user.name, user %></p>
-        <td><%= image_tag user.avatar.thumb.url if !user.avatar.nil? %></td>
-        <br>
-      <% end %>
-    </div>
 
-    <%= link_to image_tag("edit_icon.png", alt:"Editar"), edit_team_path(@team) %>
+      <% @team.users.each do |user| %>
+      <div class="nome-membros-time">
+        <td><%= image_tag user.avatar.thumb.url if !user.avatar.nil? %>
+        <p><%= link_to user.name, user %></p></td>
+      </div>
+      <% end %>
+
+
+    <div class="new-time-criado-botao">
+      <%= link_to image_tag("edit_icon.png", alt:"Editar"), edit_team_path(@team) %>
+    </div>
   </div>
 
   <div class="new-time-criado-voltar">
