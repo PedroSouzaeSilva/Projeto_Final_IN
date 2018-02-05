@@ -21,7 +21,7 @@ $(document).ready(function(){
        $(".dropdown-content").removeClass("show");
        $(".dropdown").children("a").css("background-color", "");
        $(this).children("a").css("background-color", "#222222");
-       $(this).children(".myDropdown").addClass("show");
+       $(this).children(".myDropdown").toggleClass("show");
    });
    
   $(document).click(function(event) {

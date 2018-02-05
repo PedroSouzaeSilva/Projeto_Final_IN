@@ -1,0 +1,66 @@
+.user-body{
+  position: relative;
+}
+
+.user-foto img{
+  width: 150px;
+  height: 150px;
+}
+
+.nome-email{
+  text-align: center;
+}
+
+.user-nome{
+  margin-bottom: 50px;
+}
+
+.user-nome a{
+  color: #222222;
+}
+
+.user-body-nomemail{
+  width: 275px;
+}
+
+.user-cargo{
+  width: 230px;
+  text-align: center;
+}
+
+.user-button-edit img{
+  width: 30px;
+  position: absolute;
+  right: 5px;
+  top: 5px;;
+}
+
+.user-button-delete img{
+  width: 20px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;;
+}
+
+.user-times{
+  width: 230px;
+  text-align: center;
+}
+
+.user-bar-foto{
+  width: 165px;
+  padding-left: 15px;
+}
+
+.user-bar-nomemail{
+  width: 280px;
+}
+
+.user-bar-cargos{
+  width: 230px;
+}
+
+.user-bar-times{
+  width: 245px;
+  padding-right: 15px;
+}

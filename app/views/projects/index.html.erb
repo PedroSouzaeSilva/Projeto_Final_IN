@@ -5,10 +5,10 @@
 <table>
   <thead>
     <tr>
-      <th>Nome:</th>
-      <th>Prazo:</th>
-      <th>Preço:</th>
-      <th>Descrição:</th>
+      <th>Nome</th>
+      <th>Prazo</th>
+      <th>Preço</th>
+      <th>Descrição</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,7 +20,7 @@
         <td><%= project.deadline %></td>
         <td><%= project.price %></td>
         <td><%= project.content %></td>
-        
+
         <td><%= link_to 'Mostrar Projeto', project %></td>
         <td><%= link_to 'Editar Projeto', edit_project_path(project) %></td>
         <td><%= link_to 'Excluir Projeto', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
