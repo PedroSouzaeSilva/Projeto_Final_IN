@@ -6,8 +6,8 @@
 		</div>
 	</section>
   <section class="login">
-	  <div class="container">
-      <%= form_for :sessions, class: "form", url: :login do |form| %>
+	  <div class="login-container">
+      <%= form_for :sessions, class: "form-login", url: :login do |form| %>
 
         <%= form.email_field :email, :placeholder => "E-mail" %>
 

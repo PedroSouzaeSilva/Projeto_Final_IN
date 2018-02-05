@@ -17,6 +17,8 @@
 
 // 6.0 Index Usuário
 
+// 7.0 Recuperar Senha
+
 
 //------------------------------------ 1.0 Geral
 *
@@ -83,7 +85,8 @@ input{
     background-color: rgba(5,5,5,0);
 }
 
-input:focus{
+.form-login input:focus,
+.form-cadastro input:focus {
 	background-color: white;
 	width: 300px;
 	color: #9F9EA3;
@@ -110,6 +113,17 @@ button a {
   color: #E5E5EC;
 }
 
+.btn-voltar {
+  display: block;
+  margin: 10px auto;
+  width: 120px;
+  font-size: 1.4em;
+  padding: 5px 15px;
+	background-color: rgba(5,5,15,0.5);
+	color: #9F9EA3;
+	display: block;
+}
+
 
 //-------------------------------1.1 Alertas e Notices
 
@@ -130,7 +144,7 @@ button a {
   font-size: 1.25em;
   color: #ffffff;
   border-radius: 5px;
-  background-color: red;
+  background-color: #00CCFF;
   width: 200%;
 }
 
@@ -407,7 +421,7 @@ $hamgurger-transition-speed: 0.4s;
   margin-bottom: 10px;
 }
 
-.form{ // area principal do formulario (de nome a criar usuario)
+.form-cadastro{ // area principal do formulario (de nome a criar usuario)
   padding: 50px 0;
 }
 
@@ -614,65 +628,6 @@ $hamgurger-transition-speed: 0.4s;
 	font-weight: 400;
 }
 
-.perfil-voltar {
-  display: block;
-  margin: 0 auto;
-}
-
-
-/* ------------------------ 6.0 Index Usuário */
-
-// 3.0 Index Usuario
-
-.index-users h1{ // "titulo" da pagina
-  font-size: 3em;
-  margin: 50px auto;
-  text-align: center;
-}
-
-.index-users{ // area geral dos perfis
-  width: 920px;
-  display: block;
-  margin: 0 auto;
-}
-
-.users-bar-container{ // area dos titulos das categorias
-  background-color: #222222;
-  color: #E5E5EC;
-  width: 920px;
-  font-size: 1.5em;
-  display: inline-table;
-  font-weight: 400;
-}
-
-.users-bar-container th{ // font dos titulos das categorias
-  font-weight: 400;
-}
-
-.user-body{ // area de cada usuario
-  width: 920px;
-  display: inline-table;
-  appearance: none;
-  outline: 0;
-  background-color: #E5E5EC;
-  border: 0;
-  padding: 10px 15px;
-  color: #222222;
-  border-radius: 10px;
-  font-size: 1em;
-  margin-top: 30px;
-}
-
-.button-new-user a{ // botao de novo usuario
-  display: none;
-}
-
-
-
-
-
-
-//------------------ ignorar daqui para baixo
 .perfil-mutavel{
 
 	width: 100%;
@@ -798,4 +753,66 @@ $hamgurger-transition-speed: 0.4s;
 	font-weight: 400;
 	font-size: 2em;
 	padding-top: 10px;
+}
+
+
+
+/* ------------------------ 6.0 Index Usuário */
+
+// 3.0 Index Usuario
+
+.index-users h1{ // "titulo" da pagina
+  font-size: 3em;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.index-users{ // area geral dos perfis
+  width: 920px;
+  display: block;
+  margin: 0 auto;
+}
+
+.users-bar-container{ // area dos titulos das categorias
+  background-color: #222222;
+  color: #E5E5EC;
+  width: 920px;
+  font-size: 1.5em;
+  display: inline-table;
+  font-weight: 400;
+}
+
+.users-bar-container th{ // font dos titulos das categorias
+  font-weight: 400;
+}
+
+.user-body{ // area de cada usuario
+  width: 920px;
+  display: inline-table;
+  appearance: none;
+  outline: 0;
+  background-color: #E5E5EC;
+  border: 0;
+  padding: 10px 15px;
+  color: #222222;
+  border-radius: 10px;
+  font-size: 1em;
+  margin-top: 30px;
+}
+
+.button-new-user a{ // botao de novo usuario
+  display: none;
+}
+
+//----------------------- 7.0 Recuperar senha
+
+.recover-container {
+  text-align: center;
+  padding-top: 20px;
+  
+  p {
+    padding: 10px 0;
+    font-size: 0.75em;
+    font-weight: normal;
+  }
 }
