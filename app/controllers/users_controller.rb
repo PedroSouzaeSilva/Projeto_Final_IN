@@ -30,7 +30,7 @@ class UsersController < ApplicationController
       @user = User.new(user_params)
 
       if @user.save
-        flash[:notice] = "Bemvindo à SocialzIN."
+        flash[:notice] = "Seja bem vindo(a) ao sistema!"
 		log_in @user
       else
         flash.now[:alert] = "Algo errado aconteceu."
@@ -47,7 +47,7 @@ class UsersController < ApplicationController
         uo.save
         ud = UserDirection.new(user_id: @user.id, direction_id: params[:direction_id])
         ud.save
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to @user, notice: 'Peril atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
@@ -61,7 +61,7 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.html { redirect_to users_url, notice: 'Membro excluído com sucesso.' }
       format.json { head :no_content }
     end
   end

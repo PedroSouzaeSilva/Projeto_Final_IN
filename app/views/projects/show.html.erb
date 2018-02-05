@@ -1,24 +1,32 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nome:</strong>
   <%= @project.name %>
 </p>
 
 <p>
-  <strong>Deadline:</strong>
+  <strong>Prazo:</strong>
   <%= @project.deadline %>
 </p>
 
 <p>
-  <strong>Price:</strong>
+  <strong>Preço:</strong>
   <%= @project.price %>
 </p>
 
 <p>
-  <strong>Content:</strong>
+  <strong>Descrição:</strong>
   <%= @project.content %>
 </p>
+  <strong>Time(s) alocado(s):</strong>
+    <td>
+      <% @project.teams.each do |team| %>
+        <%= link_to team.name, team_path %>
+      <% end %>
+
+    </td>
+<br>
 
 <%= link_to 'Editar Projeto', edit_project_path(@project) %> |
 <%= link_to 'Todos os projetos', projects_path %>

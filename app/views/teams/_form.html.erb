@@ -16,6 +16,9 @@
     <%= form.text_field :name, id: :team_name %>
   </div>
 
+  <%= select("", "user_id", User.all.collect {|user| [ user.name,
+      user.id ] }, {include_blank: "Membro"}) %>
+
   <div class="actions">
     <%= form.submit %>
   </div>

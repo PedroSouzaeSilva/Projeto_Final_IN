@@ -16,18 +16,24 @@
     <%= form.text_field :name, id: :project_name %>
   </div>
 
+
+    <%= form.label "Time para alocar" %>
+    <%= select("", "team_id", Team.all.collect {|team| [ team.name,
+      team.id ] }, {include_blank: "Time"}) %>
+
+
   <div class="field">
-    <%= form.label :deadline %>
+    <%= form.label "Prazo" %>
     <%= form.datetime_select :deadline, id: :project_deadline %>
   </div>
 
   <div class="field">
-    <%= form.label :price %>
+    <%= form.label "Preço" %>
     <%= form.text_field :price, id: :project_price %>
   </div>
 
   <div class="field">
-    <%= form.label :content %>
+    <%= form.label "Descrição" %>
     <%= form.text_area :content, id: :project_content %>
   </div>
 

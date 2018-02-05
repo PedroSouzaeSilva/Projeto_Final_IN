@@ -1,4 +1,5 @@
 class Project < ApplicationRecord
-  #has_many :user_projects
-  #has_many :users, through: :user_projects
+  #Para relacionar projects e teams
+  has_many :team_projects
+  has_many :teams, through: :team_projects
 end

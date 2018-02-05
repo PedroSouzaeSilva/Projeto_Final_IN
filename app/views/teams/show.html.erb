@@ -4,6 +4,9 @@
   <strong>Name:</strong>
   <%= @team.name %>
 </p>
+<% @team.users.each do |user| %>
+  <p><%= link_to user.name, user %></p>
+<% end %>
 
 <%= link_to 'Edit', edit_team_path(@team) %> |
 <%= link_to 'Back', teams_path %>

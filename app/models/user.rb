@@ -22,5 +22,7 @@ class User < ApplicationRecord
   format: { with: /\A[a-z]{2,20}\.[a-z]{2,20}\@injunior.com.br\z/,
   message: "Por favor, insira um email nome.sobrenome@injunior.com.br"}
   validates :password, length: { in: 6..12 }, allow_nil: true
+  #validates :avatar, presence: true
+
 
 end
