@@ -1,61 +1,104 @@
+<section class="projeto">
+  <div class="projeto-container">
 
-
-<p>
-  <strong>Projeto:</strong>
-  <%= @project.name %>
-</p>
-
-<p>
-  <strong>Prazo:</strong>
-  <%= @project.data_correta %>
-</p>
-
-<p>
-  <strong>Preço:</strong>
-  <%= @project.price %>
-</p>
-
-<p>
-  <strong>Descrição:</strong>
-  <%= @project.content %>
-</p>
-<p>
-  <strong>Gerente:</strong>
-  <%= @project.user_manager.name %>
-</p>
-<p>
-  <strong>PMO:</strong>
-  <%= @project.user_pmo.name %>
-</p>
-  <strong>Time(s) alocado(s):</strong>
-    <td>
-      <% @project.teams.each do |team| %>
-        <%= link_to team.name, team_path %>
-      <% end %>
-    </td>
-    <br>
-    <strong>Tarefas/Tarefa realizada?:</strong>
-      <td>
-        <% @project.assignmentprojs.each do |assignmentproj| %>
-          <%= assignmentproj.name %>/<%= assignmentproj.realized %>
-          <br>
-        <% end %>
-      </td>
+    <p class="projeto-titulo">
+      <strong>Projeto:</strong>
       <br>
+      <%= @project.name %>
+    </p>
 
-    <td><blockquote class="trello-board-compact">
-      <a href=<%= @project.trello %>>Trello Board</a>
-      </blockquote>
-  <script src="https://p.trellocdn.com/embed.min.js"></script></td>
-<br>
-<%= form_for @assignmentproj, url: form_criar_tarefa_path, local: true do |form| %>
-<%= form.label :name %>
-<%= form.text_field :name, id: :assignmentproj_name %>
-<%= form.label "Feito?" %>
-<%= form.check_box :realized, class: "check_box"%>
-<%= hidden_field_tag :project_id, @project.id %>
-<%= form.submit "Adicionar tarefa", class:"add_task" %>
-<% end %>
+    <div class="projeto-detalhes">
 
-<%= link_to 'Editar Projeto', edit_project_path(@project) %> |
-<%= link_to 'Todos os projetos', projects_path %>
+      <p class="projeto-prazo">
+        <strong>Prazo:</strong>
+        <%= @project.data_correta %>
+      </p>
+
+      <p class="projeto-preco">
+        <strong>Preço:</strong>
+        <%= @project.price %>
+      </p>
+
+    </div>
+
+    <div class="projeto-admin">
+
+      <p class="projeto-gerente">
+        <strong>Gerente:</strong>
+        <%= @project.user_manager.name %>
+      </p>
+      <p class="projeto-pmo">
+        <strong>PMO:</strong>
+        <%= @project.user_pmo.name %>
+      </p>
+
+    </div>
+
+    <p class="projeto-descri">
+      <strong>Descrição:</strong><br><br>
+      <%= @project.content %>
+    </p>
+
+    <div class="projeto-time">
+
+        <strong>Time(s) alocado(s):</strong>
+        <br>
+          <td>
+            <% @project.teams.each do |team| %>
+              <%= link_to team.name, team_path %>
+            <% end %>
+          </td>
+
+    </div>
+
+        <br>
+
+    <div class="projeto-tarefas">
+
+            <td>
+                <% @project.assignmentprojs.each do |assignmentproj| %>
+                <div class="proj-tarefa">
+                  <%= assignmentproj.name %><%= link_to assignmentproj.realized,
+                    edit_assignmentproj_path(assignmentproj) %>
+                  <br>
+                </div>
+                <% end %>
+
+            </td>
+            <br>
+
+    </div>
+
+          <div class="suma-trello">
+            <td class="trello-board-img"><blockquote class="trello-board-compact">
+              <a href=<%= @project.trello %>></a>
+              </blockquote>
+            <script src="https://p.trellocdn.com/embed.min.js"></script></td>
+          </div>
+
+      <td class="projeto-trello">
+        <%= link_to image_tag("trello-logo-blue.png", alt:"Trello", class:"trello-img-proj"), @project.trello%>
+      </td>
+
+    <br>
+    <div class="projeto-nova-tarefa">
+      <%= form_for @assignmentproj, url: form_criar_tarefa_path, local: true do |form| %>
+
+      <%= form.text_field :name, id: :assignmentproj_name, placeholder:"Nova da Tarefa" %>
+      <div class="projeto-feito">
+        <%= form.label "Feito?" %>
+        <%= form.check_box :realized, class: "check_box"%>
+      </div>
+      <%= hidden_field_tag :project_id, @project.id %>
+      <%= form.submit "Adicionar tarefa", class:"add_task perfil-voltar perfil-btn blue-button" %>
+    </div>
+
+    <td><%= link_to image_tag("edit_icon.png", alt:"Editar"), edit_project_path(@project), class:"proj-button-edit" %></td> 
+
+    <% end %>
+
+  </div>
+  <div class="ind-button">
+    <%= button_to 'Todos os projetos', projects_path, class:"blue-button perfil-voltar", :method => :get  %>
+  </div>
+</section>
