@@ -1,5 +1,6 @@
 class Assignmentproj < ApplicationRecord
-
+  validates_presence_of :name, message: "Insira o nome da tarefa"
+  
   #Para relacionar users com assignmentsproj
   has_many :user_assignmentprojs
   has_many :users, through: :user_assignmentprojs

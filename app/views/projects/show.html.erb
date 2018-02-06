@@ -1,7 +1,7 @@
-<p id="notice"><%= notice %></p>
+
 
 <p>
-  <strong>Nome:</strong>
+  <strong>Projeto:</strong>
   <%= @project.name %>
 </p>
 
@@ -47,7 +47,7 @@
     <td><blockquote class="trello-board-compact">
       <a href=<%= @project.trello %>>Trello Board</a>
       </blockquote>
-  <!-- <script src="https://p.trellocdn.com/embed.min.js"></script></td>-->
+  <script src="https://p.trellocdn.com/embed.min.js"></script></td>
 <br>
 <%= form_for @assignmentproj, url: form_criar_tarefa_path, local: true do |form| %>
 <%= form.label :name %>

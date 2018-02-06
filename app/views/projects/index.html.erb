@@ -1,40 +1,51 @@
-<p id="notice"><%= notice %></p>
+<section class="index-proj">
+  <h1>Projetos</h1>
 
-<h1>Projetos</h1>
+  <div class="index-proj-container">
+    <table>
+      <thead class="proj-bar-container">
+        <tr>
+          <th class="proj-bar-nome">Nome:</th>
+          <th class="proj-bar-prazo">Prazo:</th>
+          <th class="proj-bar-preco"> Preço:</th>
+          <th class="proj-bar-gerente">Gerente:</th>
+          <th class="proj-bar-vazio">Trello:</th>
+          <th></th>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nome:</th>
-      <th>Prazo:</th>
-      <th>Preço:</th>
-      <th>Gerente:</th>
-      <th></th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      <tbody>
+        <% @projects.each do |project| %>
 
-  <tbody>
-    <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.name %></td>
-        <td><%= project.data_correta %></td>
-        <td><%= project.price %></td>
-        <td><%= project.user_manager.name if !project.user_manager.nil?%></td>
-        <td><blockquote class="trello-board-compact">
-          <a href=<%= project.trello %>>Trello Board</a>
-          </blockquote>
-       <!--<script src="https://p.trellocdn.com/embed.min.js"></script></td>-->
 
-        <td><%= link_to 'Mostrar Projeto', project %></td>
-        <td><%= link_to 'Editar Projeto', edit_project_path(project) %></td>
-        <td><%= link_to 'Excluir Projeto', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+            <tr class="index-proj-ind">
+              <td class="proj-ind-name"><%= link_to project.name, project %></td>
+              <td class="proj-ind-data"><%= project.data_correta %></td>
+              <td class="proj-ind-preco"><%= project.price %></td>
+              <td class="proj-ind-gerente"><%= project.user_manager.name if !project.user_manager.nil?%></td>
 
-<br>
+              <td class="trello-board-img"><blockquote class="trello-board-compact">
 
-<%= link_to 'Novo Projeto', new_project_path %>
+                <a href=<%= project.trello %>></a>
+                </blockquote>
+             <script src="https://p.trellocdn.com/embed.min.js"></script></td>
+
+             <td class="proj-ind-trello"><%= link_to image_tag("trello-logo-blue.png", alt:"Trello", class:"trello-img"), project.trello%></td>
+
+              <td class="proj-button-edit"><%= link_to image_tag("edit_icon.png", alt:"Editar"), edit_project_path(project) %></td>
+              <td class="proj-button-delete"><%= link_to link_to image_tag("delete-icon.png", alt:"Editar"), project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+
+
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <br>
+
+  <div class="ind-button">
+    <%= button_to 'Novo Projeto', new_project_path, class:"blue-button perfil-voltar", :method => :get %>
+  </div>
+</section>

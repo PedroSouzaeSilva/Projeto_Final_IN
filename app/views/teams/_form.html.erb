@@ -1,5 +1,5 @@
 
-  <div class="new-user-container">
+  <div class="new-user-container verify-father">
     <%= form_with(model: team, local: true) do |form| %>
       <% if team.errors.any? %>
         <div id="error_explanation">
@@ -14,11 +14,11 @@
       <% end %>
 
       <div class="field">
-        <%= form.text_field :name, id: :team_name, :placeholder => "Nome do Time  " %>
+        <%= form.text_field :name, id: :team_name, :placeholder => "Nome do Time ", class:"verify-this" %>
       </div>
 
       <%= select("", "user_id", User.all.collect {|user| [ user.name,
-          user.id ] }, {include_blank: "Membro"}) %>
+          user.id ] }, {include_blank: "Membro"}, class:"verify-this") %>
 
       <div class="actions">
         <%= form.submit "Alterar Time" %>

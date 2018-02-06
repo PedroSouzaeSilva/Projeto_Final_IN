@@ -56,7 +56,11 @@
         </div>
 
         <div class="botoes users-new">
-          <%= form.submit "Criar Conta"%>
+          <% if logged_in? %>
+            <%= form.submit "Editar Conta"%>
+          <% else logged_in? %>
+            <%= form.submit "Criar Conta"%>
+          <% end %>
         </div>
       </div>
     </div>
