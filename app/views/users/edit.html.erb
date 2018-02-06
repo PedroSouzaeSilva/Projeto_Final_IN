@@ -4,6 +4,6 @@
 </div>
 
 <div class = "botoes-edit-users">
-    <%= button_to "Ver Perfil", @user, :class => "btn-voltar blue-button"%>
-    <%= button_to "Todos os membros", users_path, :class => "blue-button"%>
+    <%= button_to "Ver Perfil", @user, :class => "btn-voltar blue-button", :method => :get%>
+    <%= button_to "Todos os membros", users_path, :class => "blue-button",:method => :get %>
 </div>

@@ -36,10 +36,13 @@ li:nth-child(5){ top: 300px; z-index: 5;}
 
 .loading li {
   top: 50px;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .loading li span { 
-  opacity: 0; 
+  visibility: hidden;
+  opacity: 0;
 }
 
 /* styling */
