@@ -760,3 +760,40 @@
   right: 20px;
   top: 40px;
 }
+
+// Edicao de tarefa
+
+.edit-tarefa{
+  text-align: center;
+  max-width: 920px;
+  margin: 0 auto;
+  display: block;
+}
+
+.edit-tarefa-container{
+  display: block;
+  background-color: rgba(20, 5, 50, 0.3);
+  border-radius: 20px;
+  margin: 50px auto;
+  padding: 30px;
+  max-width: 400px;
+}
+
+.edit-tarefa-h1{
+  text-align: center;
+  max-width: 920px;
+  margin: 0 auto;
+  display: block;
+}
+
+.edit-tarefa-h1 h1{
+  margin: 50px auto;
+  display: block;
+  font-weight: 400;
+  font-size: 3em;
+}
+
+.field-feito{
+  font-size: 1.3em;
+  margin-bottom: 50px;
+}
