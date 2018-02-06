@@ -1,62 +1,67 @@
-<%= form_with(model: project, local: true) do |form| %>
-  <% if project.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+<section class="new-proj">
 
-      <ul>
-      <% project.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+  <h1>Novo Projeto</h1>
+
+  <div class="new-proj-container">
+    <%= form_with(model: project, local: true) do |form| %>
+      <% if project.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+          <ul>
+          <% project.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :project_name %>
+      <div class="field">
+        <%= form.text_field :name, id: :project_name, placeholder:"Nome" %>
+      </div>
+
+        <%= select("", "team_id", Team.all.collect {|team| [ team.name,
+          team.id ] }, {include_blank: "Time"}, id:"team_id") %>
+
+        <%= select("project", "user_manager_id", User.all.collect {|user| [ user.name,
+          user.id ] }, {include_blank: "Gerente"}, id:"gerente_id") %>
+
+        <%= select("project", "user_pmo_id", User.all.collect {|user| [ user.name,
+          user.id ] }, {include_blank: "PMO"}, id:"pmo_id") %>
+
+        <%= select("", "assignmentproj_id", Assignmentproj.all.collect {|assignmentproj| [ assignmentproj.name,
+          assignmentproj.id ] }, {include_blank: "Tarefa"}, id:"tarefa_id") %>
+
+
+
+
+      <div class="new-proj-prazo">
+        <h2>Prazo</h2>
+        <br>
+        <%= form.datetime_select :deadline, id: :project_deadline %>
+      </div>
+
+      <div class="field">
+        <%= form.text_field :price, id: :project_price, placeholder:"Preço" %>
+      </div>
+
+      <div class="field">
+        <%= form.text_area :content, id: :project_content, placeholder:"Descrição" %>
+      </div>
+
+      <div class="field">
+        <%= form.text_field :trello, id: :project_trello, placeholder:"Link do Trello" %>
+      </div>
+
+      <div class="botoes">
+        <%= form.submit %>
+      </div>
+    <% end %>
+
   </div>
 
-
-    <%= form.label "Time para alocar ao projeto" %>
-    <%= select("", "team_id", Team.all.collect {|team| [ team.name,
-      team.id ] }, {include_blank: "Time"}) %>
-
-    <%= form.label "Gerente" %>
-    <%= select("project", "user_manager_id", User.all.collect {|user| [ user.name,
-      user.id ] }, {include_blank: "Gerente"}) %>
-
-    <%= form.label "PMO" %>
-    <%= select("project", "user_pmo_id", User.all.collect {|user| [ user.name,
-      user.id ] }, {include_blank: "PMO"}) %>
-
-    <%= form.label "Tarefas" %>
-    <%= select("", "assignmentproj_id", Assignmentproj.all.collect {|assignmentproj| [ assignmentproj.name,
-      assignmentproj.id ] }, {include_blank: "Tarefa"}) %>
-
-
-
-
-  <div class="field">
-    <%= form.label "Prazo" %>
-    <%= form.datetime_select :deadline, id: :project_deadline %>
+  <div class="ind-button">
+    <%= button_to 'Voltar', projects_path, class:"blue-button perfil-voltar", :method => :get %>
   </div>
-
-  <div class="field">
-    <%= form.label "Preço" %>
-    <%= form.text_field :price, id: :project_price %>
-  </div>
-
-  <div class="field">
-    <%= form.label "Descrição" %>
-    <%= form.text_area :content, id: :project_content %>
-  </div>
-
-  <div class="field">
-    <%= form.label "Link do Trello" %>
-    <%= form.text_field :trello, id: :project_trello %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+  <br>
+</div

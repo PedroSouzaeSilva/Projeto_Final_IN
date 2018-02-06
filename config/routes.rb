@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
+  post 'form_criar_tarefa', to: 'assignmentprojs#create', as: :form_criar_tarefa
   resources :assignmentprojs
+
   resources :goals
   resources :teams
   get 'new_password/search', to: "new_password#search", as: :new_password

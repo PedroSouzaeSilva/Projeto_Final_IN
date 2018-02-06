@@ -461,13 +461,13 @@
 }
 
 .proj-ind-preco{
-  width: 170px;
+  width: 150px;
   text-align: center;
 }
 
 .proj-ind-gerente{
   text-align: center;
-  width: 140px;
+  width: 160px;
 }
 
 .proj-ind-trello{
@@ -475,6 +475,132 @@
   text-align: center;
 }
 
-.proj-button{
-  
+// Novo Projeto
+
+.new-proj{
+  max-width: 920px;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
 }
+
+.new-proj h1{
+  margin: 50px auto;
+  display: block;
+  font-weight: 400;
+  font-size: 3em;
+}
+
+.new-proj-container{
+  max-width: 920px;
+  margin: 50px auto;
+  position: relative;
+  display: block;
+  border-radius: 20px;
+}
+
+.new-proj-container{
+  max-width: 800px;
+  background-color: rgba(20, 5, 50, 0.3);
+  border-radius: 20px;
+  margin: 0 auto 50px;
+  padding: 30px;
+}
+
+.new-proj-container input{
+  margin: 20px auto;
+}
+
+.new-proj-container select{
+  margin: 20px;
+}
+
+#team_id{
+  display: block;
+  margin: 20px auto;
+  width: 250px;
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 1.2em;
+  color: #9F9EA3;
+  background-color: rgba(5,5,5,0);
+  border: 1px solid #9F9EA3;
+  border-radius: 10px;
+  font-style: italic;
+}
+
+#gerente_id{
+  display: block;
+  margin: 20px 60px;
+  width: 250px;
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 1.2em;
+  color: #9F9EA3;
+  background-color: rgba(5,5,5,0);
+  border: 1px solid #9F9EA3;
+  border-radius: 10px;
+  font-style: italic;
+  float: left;
+}
+
+#pmo_id{
+  display: block;
+  margin: 20px 60px;
+  width: 250px;
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 1.2em;
+  color: #9F9EA3;
+  background-color: rgba(5,5,5,0);
+  border: 1px solid #9F9EA3;
+  border-radius: 10px;
+  font-style: italic;
+  float: right;
+}
+
+#tarefa_id{
+  display: block;
+  margin: 20px auto;
+  width: 250px;
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 1.2em;
+  color: #9F9EA3;
+  background-color: rgba(5,5,5,0);
+  border: 1px solid #9F9EA3;
+  border-radius: 10px;
+  font-style: italic;
+}
+
+.new-proj-prazo h2{
+  font-size: 1.5em;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.new-proj-prazo select{
+  display: inline-block;
+  margin: 10px 20px;
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 1.2em;
+  color: #9F9EA3;
+  background-color: rgba(5,5,5,0);
+  border: 1px solid #9F9EA3;
+  border-radius: 10px;
+  font-style: italic;
+}
+
+#project_content{
+  background-color: #E5E5EC;
+  color: #222222;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.new-proj-container .botoes input{
+  margin: 20px auto;
+}
+
+// Projeto

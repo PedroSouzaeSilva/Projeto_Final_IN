@@ -31,7 +31,11 @@ class AssignmentprojsController < ApplicationController
         ua = UserAssignmentproj.new(assignmentproj_id: @assignmentproj.id,
           user_id: params[:user_id])
         ua.save
-        format.html { redirect_to @assignmentproj, notice: 'Assignmentproj was successfully created.' }
+        pa = ProjectAssignmentproj.new(assignmentproj_id: @assignmentproj.id,
+          project_id: params[:project_id])
+        pa.save
+        @project = Project.find params[:project_id]
+        format.html { redirect_to @project, notice: 'Assignmentproj was successfully created.' }
         format.json { render :show, status: :created, location: @assignmentproj }
       else
         format.html { render :new }

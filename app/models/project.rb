@@ -1,4 +1,21 @@
 class Project < ApplicationRecord
+  validates_presence_of :name, message: "Insira um nome para o projeto"
+  validates_presence_of :deadline, message: "Insira um prazo válido"
+  validates_presence_of :user_manager_id, message: "Aloque um gerente para o projeto"
+  validates_presence_of :user_pmo_id, message: "Aloque um PMO para o projeto"
+  
+  validates :price, numericality: {greater_than_or_equal_to: 0, less_than_or_equal_to: 1000000, message: "Insira um custo válido, entre R$ 0,00 - 1000000,00"}
+  validate :deadline_in_present, :price_is_more_than_cents
+  
+  def price_is_more_than_cents
+    errors.add(:price, "Valor inválido para custo, Casas Decimais > 2") if
+    !price.blank? && price % 0.01 > 0
+  end
+  
+  def deadline_in_present
+    errors.add(:deadline, "O prazo não pode ser no passado") if
+    !deadline.blank? and deadline <= Date.today
+  end
 
   belongs_to :user_manager, :class_name => 'User'
   belongs_to :user_pmo, :class_name => 'User'

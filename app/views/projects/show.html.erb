@@ -1,7 +1,7 @@
-<p id="notice"><%= notice %></p>
+
 
 <p>
-  <strong>Nome:</strong>
+  <strong>Projeto:</strong>
   <%= @project.name %>
 </p>
 
@@ -46,8 +46,16 @@
     <td><blockquote class="trello-board-compact">
       <a href=<%= @project.trello %>>Trello Board</a>
       </blockquote>
-   <script src="https://p.trellocdn.com/embed.min.js"></script></td>
+  <script src="https://p.trellocdn.com/embed.min.js"></script></td>
 <br>
+<%= form_for @assignmentproj, url: form_criar_tarefa_path, local: true do |form| %>
+<%= form.label :name %>
+<%= form.text_field :name, id: :assignmentproj_name %>
+<%= form.label "Feito?" %>
+<%= form.check_box :realized, class: "check_box"%>
+<%= hidden_field_tag :project_id, @project.id %>
+<%= form.submit "Adicionar tarefa", class:"add_task" %>
+<% end %>
 
 <%= link_to 'Editar Projeto', edit_project_path(@project) %> |
 <%= link_to 'Todos os projetos', projects_path %>
