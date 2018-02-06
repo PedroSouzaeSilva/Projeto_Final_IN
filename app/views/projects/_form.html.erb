@@ -1,4 +1,4 @@
-<section class="new-proj">
+<section class="new-proj verify-father">
 
   <h1>Novo Projeto</h1>
 
@@ -17,17 +17,17 @@
       <% end %>
 
       <div class="field">
-        <%= form.text_field :name, id: :project_name, placeholder:"Nome" %>
+        <%= form.text_field :name, id: :project_name, placeholder:"Nome", class:"verify-this" %>
       </div>
 
         <%= select("", "team_id", Team.all.collect {|team| [ team.name,
-          team.id ] }, {include_blank: "Time"}, id:"team_id") %>
+          team.id ] }, {include_blank: "Time"}, id:"team_id", class:"verify-this") %>
 
         <%= select("project", "user_manager_id", User.all.collect {|user| [ user.name,
-          user.id ] }, {include_blank: "Gerente"}, id:"gerente_id") %>
+          user.id ] }, {include_blank: "Gerente"}, id:"gerente_id", class:"verify-this") %>
 
         <%= select("project", "user_pmo_id", User.all.collect {|user| [ user.name,
-          user.id ] }, {include_blank: "PMO"}, id:"pmo_id") %>
+          user.id ] }, {include_blank: "PMO"}, id:"pmo_id", class:"verify-this") %>
 
         <%= select("", "assignmentproj_id", Assignmentproj.all.collect {|assignmentproj| [ assignmentproj.name,
           assignmentproj.id ] }, {include_blank: "Tarefa"}, id:"tarefa_id") %>
@@ -38,11 +38,11 @@
       <div class="new-proj-prazo">
         <h2>Prazo</h2>
         <br>
-        <%= form.datetime_select :deadline, id: :project_deadline %>
+        <%= form.datetime_select :deadline, id: :project_deadline, class:"verify-this" %>
       </div>
 
       <div class="field">
-        <%= form.text_field :price, id: :project_price, placeholder:"Preço" %>
+        <%= form.text_field :price, id: :project_price, placeholder:"Preço", class:"verify-this" %>
       </div>
 
       <div class="field">
