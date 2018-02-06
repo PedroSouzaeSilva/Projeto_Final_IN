@@ -9,7 +9,7 @@ class Project < ApplicationRecord
   
   def price_is_more_than_cents
     errors.add(:price, "Valor inválido para custo, Casas Decimais > 2") if
-    !price.blank? && price % 0.01 > 0
+    !price.blank? && price % 0.01 < 0
   end
   
   def deadline_in_present
