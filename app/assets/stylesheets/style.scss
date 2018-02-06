@@ -148,11 +148,11 @@ button a {
   from {
     opacity: 1;
   }
-  
+
   50% {
     opacity: 0.5;
   }
-  
+
   100% {
     opacity: 0;
     visibility: hidden;
@@ -429,7 +429,7 @@ $hamgurger-transition-speed: 0.4s;
 	font-size: 1.4em;
   padding: 5px 15px;
 	background-color: rgba(5,5,15,0.5);
-	color: #9F9EA3;
+	color: #E5E5EC;
 	display: block;
 	margin: 10px auto;
 }
@@ -886,7 +886,7 @@ $hamgurger-transition-speed: 0.4s;
 .recover-container {
   text-align: center;
   padding-top: 20px;
-  
+
   p {
     padding: 10px 0;
     font-size: 0.75em;
