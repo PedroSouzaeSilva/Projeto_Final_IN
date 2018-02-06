@@ -1,10 +1,21 @@
-<h1>presidencia</h1>
+<h1>Diretoria de Presidência</h1>
 
+<div class='Diretor-nav'>
+    <h2>Diretor</h2>
+    <% @assessores.each do |assessor| %>
+      <% if assessor.dir %>
+        <p><%= link_to assessor.name, assessor %></p>
+        <%= image_tag assessor.avatar.thumb.url, alt: "Foto de Perfil", class: "foto" if !assessor.avatar.nil? unless assessor.avatar.blank?%>
+      <% end %>
+    <% end %>
+</div>
 
-    <div class='director-nav'>
-        <h2>Acessores</h2>
-        <% @acessores.each do |acessor| %>
-        <p><%= acessor.name %></p>
-        <% end %>
-    </div>
+<div class='Assessor-nav'>
+    <h2>Assessores</h2>
+    <% @assessores.each do |assessor| %>
+      <% if !assessor.dir %>
+        <p><%= link_to assessor.name, assessor %></p>
+        <%= image_tag assessor.avatar.thumb.url, alt: "Foto de Perfil", class: "foto" if !assessor.avatar.nil? unless assessor.avatar.blank?%>
+      <% end %>
+    <% end %>
 </div>
