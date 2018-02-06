@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   post 'form_criar_tarefa', to: 'assignmentprojs#create', as: :form_criar_tarefa
-  resources :assignmentprojs
+  resources :assignmentprojs, except: :index
 
   resources :goals
   resources :teams

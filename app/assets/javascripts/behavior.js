@@ -44,11 +44,17 @@ $(document).ready(function(){
   verificar se eles estão não-nulos*/
   
   $(document).on("click", ".verifier", function(e){
-      e.preventDefault();
-      ($(".verifier").parents(".verify-father")).find(".verify-this").addClass("Teste");
-      if(($(".verifier").parents(".verify-father")).find(".verify-this").val().length < 1) {
-          e.preventDefault();
-          swal("Campo vazio", "", "error");
-      }
+     var ocorre_vazio = false;
+     $(".verifier").parents(".verify-father").find(".verify-this").each(function(){
+        if($(this).val().length < 1) {
+           e.preventDefault();
+           ocorre_vazio = true;
+           $(this).addClass("erro-vazio");
+        }
+        else {
+           $(this).removeClass("erro-vazio");
+        }
+      if(ocorre_vazio) {swal("Campo vazio", "", "error");}
+   });
   });
 });

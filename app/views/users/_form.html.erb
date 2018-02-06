@@ -23,11 +23,11 @@
     <div class="cadastro-container">
       <div class="users-new">
         <div class="field">
-            <%= form.text_field :name, :class => "form-cadastro", placeholder:"Nome", id: :user_name %>
+            <%= form.text_field :name, :class => "form-cadastro verify-this", placeholder:"Nome", id: :user_name %>
         </div>
 
         <div class="field">
-          <%= form.text_field :email, :class => "form-cadastro", placeholder:"E-mail", id: :user_email %>
+          <%= form.text_field :email, :class => "form-cadastro verify-this", placeholder:"E-mail", id: :user_email %>
         </div>
 
 
@@ -48,18 +48,18 @@
 
 
         <div class="field">
-          <%= form.password_field :password, :class => "form-cadastro", placeholder:"Senha", id: :usuario_password %>
+          <%= form.password_field :password, :class => "form-cadastro verify-this", placeholder:"Senha", id: :usuario_password %>
         </div>
 
         <div class="field">
-          <%= form.password_field :password_confirmation, :class => "form-cadastro", placeholder:"Confirme a senha", id: :usuario_password_confirmation %>
+          <%= form.password_field :password_confirmation, :class => "form-cadastro verify-this ", placeholder:"Confirme a senha", id: :usuario_password_confirmation %>
         </div>
 
         <div class="botoes users-new">
           <% if logged_in? %>
             <%= form.submit "Editar Conta"%>
           <% else logged_in? %>
-            <%= form.submit "Criar Conta"%>
+            <%= form.submit "Criar Conta", class: "verifier"%>
           <% end %>
         </div>
       </div>
