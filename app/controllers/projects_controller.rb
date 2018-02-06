@@ -28,6 +28,9 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.save
+        tp = TeamProject.new(team_id: params[:team_id], project_id: @project.id)
+        tp.save
+
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
         format.json { render :show, status: :created, location: @project }
       else
@@ -44,6 +47,7 @@ class ProjectsController < ApplicationController
       if @project.update(project_params)
         tp = TeamProject.new(team_id: params[:team_id], project_id: @project.id)
         tp.save
+
         format.html { redirect_to @project, notice: 'Project was successfully updated.' }
         format.json { render :show, status: :ok, location: @project }
       else
@@ -71,6 +75,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:name, :deadline, :price, :content, :trello)
+      params.require(:project).permit(:name, :deadline, :price, :content, :trello, :user_manager_id, :user_pmo_id)
     end
 end

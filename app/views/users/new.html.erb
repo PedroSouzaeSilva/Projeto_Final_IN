@@ -4,4 +4,5 @@
     <%= image_tag("lobo.png", alt:"Lobo", class:"lobo") %>
     <%= render 'form', user: @user %>
   </div>
+  <%= button_to "Voltar", users_path, :class => "btn-voltar perfil-btn", :method => :get %>
 </div>

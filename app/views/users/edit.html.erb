@@ -1,10 +1,9 @@
 <div class = "editar-user">
     <h1>Editar Perfil</h1>
+    <%= render 'form', user: @user %>
 </div>
 
-<%= render 'form', user: @user %>
-
 <div class = "botoes-edit-users">
-    <%= link_to 'Ver Perfil', @user %>
-    <%= link_to 'Todos os Membros', users_path %>
+    <%= button_to "Ver Perfil", @user, :class => "btn-voltar blue-button", :method => :get%>
+    <%= button_to "Todos os membros", users_path, :class => "blue-button",:method => :get %>
 </div>
