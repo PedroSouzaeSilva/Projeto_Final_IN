@@ -14,6 +14,7 @@
 // 4.0 Cadastro
 
 // 5.0 Perfil
+//  5.1 Editar Perfil
 
 // 6.0 Index Usuário
 
@@ -85,8 +86,8 @@ input{
     background-color: rgba(5,5,5,0);
 }
 
-.form-login input:focus,
-.form-cadastro input:focus {
+.form-login:focus,
+.form-cadastro:focus {
 	background-color: white;
 	width: 300px;
 	color: #9F9EA3;
@@ -137,14 +138,24 @@ button a {
 
 }
 
-.notice-container,
-.alert-container{
+.notice-container {
   padding: 10px 0;
   transform: translate(calc(-50%), -50%);
   font-size: 1.25em;
   color: #ffffff;
   border-radius: 5px;
   background-color: #00CCFF;
+  width: 200%;
+}
+
+.alert-container {
+  
+  padding: 10px 0;
+  transform: translate(calc(-50%), -50%);
+  font-size: 1.25em;
+  color: #ffffff;
+  border-radius: 5px;
+  background-color: #D10000;
   width: 200%;
 }
 
@@ -412,6 +423,7 @@ $hamgurger-transition-speed: 0.4s;
 }
 
 .cadastro{ // section geral do cadastro
+  padding: 20px 0;
 }
 
 .lobo{ // imagem a cima do cadastro
@@ -568,7 +580,8 @@ $hamgurger-transition-speed: 0.4s;
 }
 
 .foto{
-	max-width: 250px;
+	max-width: 200px;
+	overflow: hidden;
 }
 
 .perfil-dados {
@@ -755,6 +768,34 @@ $hamgurger-transition-speed: 0.4s;
 	padding-top: 10px;
 }
 
+//------------------------- 5.1 Editar Usuário
+
+.editar-user h1{
+  text-align: center;
+  margin: 20px 0;
+}
+
+.diretoria-form-new_user,
+.cargo-form-new_user {
+  label {
+    display: none;
+  }
+}
+
+#direction_id,
+#occupation_id {
+  display: block;
+  margin: 10px auto;
+  width: 250px;
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 1.2em;
+  color: #9F9EA3;
+  background-color: rgba(5,5,5,0);
+  border: 1px solid #9F9EA3;
+  border-radius: 10px;
+  font-style: italic;
+}
 
 
 /* ------------------------ 6.0 Index Usuário */
