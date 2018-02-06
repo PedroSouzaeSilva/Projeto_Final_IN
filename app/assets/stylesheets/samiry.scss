@@ -797,3 +797,51 @@
   font-size: 1.3em;
   margin-bottom: 50px;
 }
+
+
+// Diretorias
+
+.diretoria{
+  width: 920px;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  min-height: 100vh;
+  padding-bottom: 50px;
+}
+
+.diretoria h1{
+  margin: 50px auto;
+  display: block;
+  font-weight: 400;
+  font-size: 3em;
+}
+
+.diretoria-container{
+  display: block;
+  background-color: rgba(20, 5, 50, 0.3);
+  border-radius: 20px;
+  margin: 50px auto;
+  padding: 30px;
+  max-width: 400px;
+}
+
+.Diretor-nav{
+  background-color: #E5E5EC;
+  color: #222222;
+  margin: 20px auto;
+  text-align: center;
+  padding: 20px;
+  border-radius: 0 15px 0 15px;
+  width: 300px;
+}
+
+.Assessor-nav{
+  background-color: #E5E5EC;
+  color: #222222;
+  margin: 20px auto;
+  text-align: center;
+  padding: 20px;
+  border-radius: 0 15px 0 15px;
+  width: 300px;
+}
