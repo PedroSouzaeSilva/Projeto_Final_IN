@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :assignmentprojs
   resources :goals
   resources :teams
   get 'new_password/search', to: "new_password#search", as: :new_password
