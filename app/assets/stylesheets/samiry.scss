@@ -421,7 +421,7 @@
   color: #222222;
 }
 
-.proj-bar-container th{ // font dos titulos das categorias
+.proj-bar-container th{
   font-weight: 400;
 }
 
@@ -492,14 +492,8 @@
 }
 
 .new-proj-container{
-  max-width: 920px;
-  margin: 50px auto;
   position: relative;
   display: block;
-  border-radius: 20px;
-}
-
-.new-proj-container{
   max-width: 800px;
   background-color: rgba(20, 5, 50, 0.3);
   border-radius: 20px;
@@ -604,3 +598,165 @@
 }
 
 // Projeto
+
+.suma-trello{
+  display: none;
+}
+
+.projeto{
+  max-width: 920px;
+  margin: 0 auto;
+  display: block;
+}
+
+.projeto h1{
+  margin: 50px auto;
+  display: block;
+  font-weight: 400;
+  font-size: 3em;
+}
+
+.projeto-container{
+  position: relative;
+  display: block;
+  max-width: 800px;
+  background-color: rgba(20, 5, 50, 0.3);
+  border-radius: 20px;
+  margin: 50px auto;
+  padding: 30px;
+}
+
+.projeto-container input{
+  margin: 20px auto;
+}
+
+.projeto-titulo{
+  font-size: 3em;
+  text-align: center;
+}
+
+.projeto-prazo{
+  font-size: 1.5em;
+  float: left;
+  margin: 30px 0;
+  width: 50%;
+}
+
+.projeto-preco{
+  font-size: 1.5em;
+  text-align: right;
+  float: right;
+  margin: 30px 0;
+  width: 50%;
+}
+
+.projeto-detalhes{
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.projeto-gerente{
+  font-size: 1.5em;
+  float: left;
+  margin: 30px 0;
+  width: 50%;
+}
+
+.projeto-pmo{
+  font-size: 1.5em;
+  float: right;
+  margin: 30px 0;
+  width: 50%;
+  text-align: right;
+}
+
+.projeto-admin{
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.projeto-descri{
+  float: left;
+  font-size: 1.2em;
+  text-align: justify;
+  margin: 30px;
+}
+
+.projeto-time{
+  width: 700px;
+  margin: 30px;
+  font-size: 1.5em;
+  float: left;
+  text-align: center;
+}
+
+.projeto-tarefas{
+  margin: 30px;
+  font-size: 1.5em;
+}
+
+.proj-tarefa{
+  width: 680px;
+  display: inline-table;
+  appearance: none;
+  outline: 0;
+  background-color: #E5E5EC;
+  border: 0;
+  padding: 10px 15px;
+  color: #222222;
+  border-radius: 10px;
+  font-size: 1em;
+  margin-top: 30px;
+  position: relative;
+}
+
+.proj-tarefa a{
+  color: #222222;
+  float: right;
+}
+
+.trello-img-proj{
+  width: 100px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.projeto-nova-tarefa{
+  background-color: rgba(5,5,5,0);
+  border-radius: 20px;
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+#assignmentproj_name{
+  display: block;
+  appearance: none;
+  outline: 0;
+  width: 250px;
+  border: 1px solid #9F9EA3;
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin: 0 auto 10px auto;
+  text-align: center;
+  font-size: 18px;
+  color: #E5E5EC;
+  background-color: rgba(5,5,15,0);
+}
+
+#add_task{
+  background-color: rgba(5,5,15,0.5)
+}
+
+.projeto-feito{
+  display: none;
+}
+
+.proj-button-edit1 img{
+  width: 50px;
+  position: absolute;
+  right: 20px;
+  top: 40px;
+}
