@@ -4,6 +4,7 @@
 //
 //
 // 1.0 Geral
+//  1.1 Alertas e notices
 
 // 2.0 Header
 // 	2.1 Menu-Nav
@@ -13,8 +14,11 @@
 // 4.0 Cadastro
 
 // 5.0 Perfil
+//  5.1 Editar Perfil
 
 // 6.0 Index Usuário
+
+// 7.0 Recuperar Senha
 
 
 //------------------------------------ 1.0 Geral
@@ -24,6 +28,11 @@
 	font-family: 'Exo 2', sans-serif;
 	margin: 0;
 	padding: 0;
+}
+
+a{
+	text-decoration: none;
+	color: #E5E5EC;
 }
 
 body{
@@ -77,7 +86,8 @@ input{
     background-color: rgba(5,5,5,0);
 }
 
-input:focus{
+.form-login:focus,
+.form-cadastro:focus {
 	background-color: white;
 	width: 300px;
 	color: #9F9EA3;
@@ -86,6 +96,7 @@ input:focus{
 }
 
 button{
+  cursor: pointer;
 	appearance: none;
 	outline: 0;
 	background-color: #E5E5EC;
@@ -99,6 +110,87 @@ button{
   margin-bottom: 10px;
 }
 
+button a {
+  text-decoration: none;
+  color: #E5E5EC;
+}
+
+.btn-voltar {
+  cursor: pointer;
+  display: block;
+  margin: 10px auto;
+  width: 120px;
+  font-size: 1.4em;
+  padding: 5px 15px;
+	background-color: rgba(5,5,15,0.5);
+	color: #9F9EA3;
+	display: block;
+}
+
+
+//-------------------------------1.1 Alertas e Notices
+
+.pop-up-container {     //Aparece na tela quando há alerts ou notices
+  position: absolute;
+  text-align: center;
+  max-width: 300px;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+  animation-name: sumir;
+  animation-duration: 0.4s;
+  animation-delay: 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes sumir{
+  from {
+    opacity: 1;
+  }
+  
+  50% {
+    opacity: 0.5;
+  }
+  
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.notice-container {
+  position: relative;
+  padding: 0;
+  transform: translate(calc(-50%), -50%);
+  font-size: 1.25em;
+  line-height: 2em;
+  color: #ffffff;
+  border-radius: 5px;
+  background-color: #00CCFF;
+  width: 200%;
+}
+
+.alert-container {
+  position: relative;
+  padding: 0;
+  transform: translate(calc(-50%), -50%);
+  font-size: 1.25em;
+  line-height: 2em;
+  color: #ffffff;
+  border-radius: 5px;
+  background-color: #D10000;
+  width: 200%;
+}
+
+.notice-cotainer p,
+.alert-container p {
+  margin-bottom: 5px;
+}
+
+#error_explanation{
+  text-align: center;
+}
 
 //---------------------------- 2.0 Header
 
@@ -170,6 +262,7 @@ button{
 }
 
 .navbar a {
+  transition: all 200ms cubic-bezier(0.690, 0.005, 0.435, 1.000);
   float: right;
   font-size: 16px;
   color: white;
@@ -203,7 +296,9 @@ button{
 }
 
 .dropdown-content {
-  display: none;
+  transition: all 200ms cubic-bezier(0.690, 0.005, 0.435, 1.000);
+  visibility: hidden;
+  opacity: 0;
   position: absolute;
   top: 100%;
   background-color: #f9f9f9;
@@ -214,20 +309,22 @@ button{
 }
 
 .dropdown-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: center;
+  transition: all 200ms cubic-bezier(0.690, 0.005, 0.435, 1.000);
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
 }
 
 .dropdown-content a:hover {
-    background-color: #ddd;
+  background-color: #ddd;
 }
 
 .show {
-    display: block;
+  opacity: 1;
+  visibility: unset;
 }
 
 /*---------------------------código copiado para o menu hambúrguer */
@@ -293,7 +390,7 @@ $hamgurger-transition-speed: 0.4s;
     .bar-1 {
       transform: rotate(0) translate3d(0, -($hamgurger-bar-height * 2), 0);
     }
-    
+
     .bar-3 {
       transform: rotate(0) translate3d(0, ($hamgurger-bar-height * 2), 0);
     }
@@ -328,8 +425,9 @@ $hamgurger-transition-speed: 0.4s;
 }
 
 .blue-button{
+  cursor: pointer;
 	font-size: 1.4em;
-  	padding: 5px 15px;
+  padding: 5px 15px;
 	background-color: rgba(5,5,15,0.5);
 	color: #9F9EA3;
 	display: block;
@@ -355,10 +453,7 @@ $hamgurger-transition-speed: 0.4s;
 }
 
 .cadastro{ // section geral do cadastro
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  padding: 20px 0;
 }
 
 .lobo{ // imagem a cima do cadastro
@@ -368,8 +463,8 @@ $hamgurger-transition-speed: 0.4s;
   margin-bottom: 10px;
 }
 
-.form{ // area principal do formulario (de nome a criar usuario)
-  padding: 30px 0;
+.form-cadastro{ // area principal do formulario (de nome a criar usuario)
+  padding: 50px 0;
 }
 
 .cadastro input{ // todos os inputs da area cadastro
@@ -392,22 +487,6 @@ $hamgurger-transition-speed: 0.4s;
   color: #9F9EA3;
   background-color: rgba(5,5,5,0);
   font-weight: 700;
-  font-style: italic;
-}
-
-.cadastro select{ // todo select da area de cadastro
-  display: block;
-  outline: 0;
-  width: 250px;
-  border: 1px solid #9F9EA3;
-  border-radius: 10px;
-  padding: 10px 15px;
-  margin: 0 auto 10px auto;
-  display: block;
-  text-align: center;
-  font-size: 18px;
-  color: #9F9EA3;
-  background-color: rgba(5,5,5,0);
   font-style: italic;
 }
 
@@ -494,6 +573,17 @@ $hamgurger-transition-speed: 0.4s;
 	margin: 40px auto;
 }
 
+.perfil-btn-editar {
+  width: 200px;
+  margin: 10px 0;
+}
+
+.perfil-btn a{
+  padding: 10px 33%;
+  text-decoration: none;
+  color: #222222;
+}
+
 .perfil-container{
 	position: relative;
 	width:100%;
@@ -506,7 +596,8 @@ $hamgurger-transition-speed: 0.4s;
 .perfil-foto{
 	margin-right: 0;
 	float: left;
-	margin: 30px;
+	width: 30%;
+	margin: 30px 2.5% 30px 5%;
 }
 
 .perfil-container::before,
@@ -518,19 +609,21 @@ $hamgurger-transition-speed: 0.4s;
 
 .perfil-foto button{
 	display: block;
-	margin: 10px auto;
+	margin: 10px 0;
 	width: 200px;
 	background-color: rgba(255,255,255,0.5);
 
 }
 
 .foto{
-	max-width: 250px;
+	max-width: 200px;
+	overflow: hidden;
 }
 
 .perfil-dados {
-	float: left;
-	margin-left: 15%;
+	float: right;
+	width: 55%;
+	margin: 30px 5% 30px 2.5%;
 }
 
 .perfil-nome::before,
@@ -541,12 +634,13 @@ $hamgurger-transition-speed: 0.4s;
 }
 
 .perfil-nome {
-	margin: 20px auto;
+	margin: 0 auto 20px auto;
 	text-align: center;
 }
 
 .perfil-email {
 	background-color: #eeeeee;
+	opacity: 0.85;
 	color: #222222;
 	margin: 10px auto;
 	text-align: center;
@@ -561,71 +655,28 @@ $hamgurger-transition-speed: 0.4s;
 	clear: both;
 }
 
-.perfil-botoes a{
+.cargos-container {
+	background-color: #eeeeee;
+	opacity: 0.85;
+	color: #222222;
+	margin: 10px auto;
+	text-align: center;
+	padding: 15px;
+	border-radius: 0 15px 0 15px;
+}
+
+.perfil-infos {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.perfil-infos a{
 	text-decoration: none;
 	color: #222222;
 	font-family: 'Exo 2', sans-serif;
 	font-weight: 400;
 }
 
-/* ------------------------ 6.0 Index Usuário */
-
-// 3.0 Index Usuario
-
-.index-users h1{ // "titulo" da pagina
-  font-size: 3em;
-  margin: 50px auto;
-  text-align: center;
-}
-
-.index-users{ // area geral dos perfis
-  width: 920px;
-  display: block;
-  margin: 0 auto;
-}
-
-.users-bar-container{ // area dos titulos das categorias
-  background-color: #222222;
-  color: #E5E5EC;
-  width: 920px;
-  font-size: 1.5em;
-  display: inline-table;
-  font-weight: 400;
-}
-
-.users-bar-container th{ // font dos titulos das categorias
-  font-weight: 400;
-}
-
-.user-body{ // area de cada usuario
-  width: 920px;
-  display: inline-table;
-  appearance: none;
-  outline: 0;
-  background-color: #E5E5EC;
-  border: 0;
-  padding: 10px 15px;
-  color: #222222;
-  border-radius: 10px;
-  font-size: 1em;
-  margin-top: 30px;
-}
-
-.button-new-user a{ // botao de novo usuario
-  font-size: 1.4em;
-  padding: 5px 15px;
-  background-color: #222222;
-  border-radius: 10px;
-  color: #E5E5EC;
-  text-decoration: none;
-  float: right;
-  margin-top: 30px;
-}
-
-
-
-
-//------------------ ignorar daqui para baixo
 .perfil-mutavel{
 
 	width: 100%;
@@ -673,10 +724,6 @@ $hamgurger-transition-speed: 0.4s;
 	color: #222222;
 	float: left;
 }
-
-
-
-
 
 
 .proj h2{
@@ -755,4 +802,94 @@ $hamgurger-transition-speed: 0.4s;
 	font-weight: 400;
 	font-size: 2em;
 	padding-top: 10px;
+}
+
+//------------------------- 5.1 Editar Usuário
+
+.editar-user h1{
+  text-align: center;
+  margin: 20px 0;
+}
+
+.diretoria-form-new_user,
+.cargo-form-new_user {
+  label {
+    display: none;
+  }
+}
+
+#direction_id,
+#occupation_id {
+  display: block;
+  margin: 10px auto;
+  width: 250px;
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 1.2em;
+  color: #9F9EA3;
+  background-color: rgba(5,5,5,0);
+  border: 1px solid #9F9EA3;
+  border-radius: 10px;
+  font-style: italic;
+}
+
+
+/* ------------------------ 6.0 Index Usuário */
+
+// 3.0 Index Usuario
+
+.index-users h1{ // "titulo" da pagina
+  font-size: 3em;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.index-users{ // area geral dos perfis
+  width: 920px;
+  display: block;
+  margin: 0 auto;
+}
+
+.users-bar-container{ // area dos titulos das categorias
+  background-color: #222222;
+  color: #E5E5EC;
+  width: 920px;
+  font-size: 1.5em;
+  display: inline-table;
+  font-weight: 400;
+}
+
+.users-bar-container th{ // font dos titulos das categorias
+  font-weight: 400;
+}
+
+.user-body{ // area de cada usuario
+  width: 920px;
+  display: inline-table;
+  appearance: none;
+  outline: 0;
+  background-color: #E5E5EC;
+  border: 0;
+  padding: 10px 15px;
+  color: #222222;
+  border-radius: 10px;
+  font-size: 1em;
+  margin-top: 30px;
+}
+
+.button-new-user a{ // botao de novo usuario
+  display: none;
+}
+
+//----------------------- 7.0 Recuperar senha
+
+.recover-container {
+  text-align: center;
+  padding-top: 20px;
+  
+  p {
+    padding: 10px 0;
+    font-size: 0.75em;
+    font-weight: normal;
+  }
 }
