@@ -8,6 +8,7 @@
       <th>Nome:</th>
       <th>Prazo:</th>
       <th>Preço:</th>
+      <th>Gerente:</th>
       <th></th>
 
       <th colspan="3"></th>
@@ -20,10 +21,11 @@
         <td><%= project.name %></td>
         <td><%= project.data_correta %></td>
         <td><%= project.price %></td>
+        <td><%= project.user_manager.name if !project.user_manager.nil?%></td>
         <td><blockquote class="trello-board-compact">
           <a href=<%= project.trello %>>Trello Board</a>
           </blockquote>
-       <script src="https://p.trellocdn.com/embed.min.js"></script></td>
+       <!--<script src="https://p.trellocdn.com/embed.min.js"></script></td>-->
 
         <td><%= link_to 'Mostrar Projeto', project %></td>
         <td><%= link_to 'Editar Projeto', edit_project_path(project) %></td>

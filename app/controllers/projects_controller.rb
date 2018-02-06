@@ -30,6 +30,9 @@ class ProjectsController < ApplicationController
       if @project.save
         tp = TeamProject.new(team_id: params[:team_id], project_id: @project.id)
         tp.save
+        pa = ProjectAssignmentproj.new(assignmentproj_id: params[:assignmentproj_id],
+          project_id: @project.id)  
+        pa.save
 
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
         format.json { render :show, status: :created, location: @project }
@@ -47,6 +50,9 @@ class ProjectsController < ApplicationController
       if @project.update(project_params)
         tp = TeamProject.new(team_id: params[:team_id], project_id: @project.id)
         tp.save
+        pa = ProjectAssignmentproj.new(assignmentproj_id: params[:assignmentproj_id],
+          project_id: @project.id)
+        pa.save
 
         format.html { redirect_to @project, notice: 'Project was successfully updated.' }
         format.json { render :show, status: :ok, location: @project }

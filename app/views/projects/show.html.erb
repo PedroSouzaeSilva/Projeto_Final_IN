@@ -21,11 +21,11 @@
 </p>
 <p>
   <strong>Gerente:</strong>
-  <%= @project.user_manager %>
+  <%= @project.user_manager.name %>
 </p>
 <p>
   <strong>PMO:</strong>
-  <%= @project.user_pmo %>
+  <%= @project.user_pmo.name %>
 </p>
   <strong>Time(s) alocado(s):</strong>
     <td>
@@ -33,6 +33,15 @@
         <%= link_to team.name, team_path %>
       <% end %>
     </td>
+    <br>
+    <strong>Tarefas/Tarefa realizada?:</strong>
+      <td>
+        <% @project.assignmentprojs.each do |assignmentproj| %>
+          <%= assignmentproj.name %>/<%= assignmentproj.realized %>
+          <br>
+        <% end %>
+      </td>
+      <br>
 
     <td><blockquote class="trello-board-compact">
       <a href=<%= @project.trello %>>Trello Board</a>

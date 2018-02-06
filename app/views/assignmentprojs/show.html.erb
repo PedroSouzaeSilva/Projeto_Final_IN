@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @assignmentproj.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @assignmentproj.description %>
+</p>
+
+<% @assignmentproj.users.each do |user| %>
+  <p><%= link_to user.name, user_path %></p>
+<% end %>
+
+<p>
+  <strong>Realized:</strong>
+  <%= @assignmentproj.realized %>
+</p>
+
+<%= link_to 'Edit', edit_assignmentproj_path(@assignmentproj) %> |
+<%= link_to 'Back', assignmentprojs_path %>

@@ -17,17 +17,21 @@
   </div>
 
 
-    <%= form.label "Time para alocar" %>
+    <%= form.label "Time para alocar ao projeto" %>
     <%= select("", "team_id", Team.all.collect {|team| [ team.name,
       team.id ] }, {include_blank: "Time"}) %>
 
-      <%= form.label "Gerente" %>
-      <%= select("", "user_manager_id", User.all.collect {|user| [ user.name,
-        user.id ] }, {include_blank: "Gerente"}) %>
+    <%= form.label "Gerente" %>
+    <%= select("project", "user_manager_id", User.all.collect {|user| [ user.name,
+      user.id ] }, {include_blank: "Gerente"}) %>
 
-        <%= form.label "PMO" %>
-        <%= select("", "user_pmo_id", User.all.collect {|user| [ user.name,
-          user.id ] }, {include_blank: "PMO"}) %>
+    <%= form.label "PMO" %>
+    <%= select("project", "user_pmo_id", User.all.collect {|user| [ user.name,
+      user.id ] }, {include_blank: "PMO"}) %>
+
+    <%= form.label "Tarefas" %>
+    <%= select("", "assignmentproj_id", Assignmentproj.all.collect {|assignmentproj| [ assignmentproj.name,
+      assignmentproj.id ] }, {include_blank: "Tarefa"}) %>
 
 
 
