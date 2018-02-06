@@ -5,25 +5,22 @@
       <%= image_tag("lobo.png",  alt: "Lobo", class: "lobo") %>
 		</div>
 	</section>
-  <section class="login">
-	  <div class="container">
-      <%= form_for :sessions, class: "form", url: :login do |form| %>
-
-        <%= form.email_field :email, :placeholder => "E-mail" %>
-
-        <%= form.password_field :password, :placeholder=> "Senha" %>
-
+	<section class="login">
+    <div class="login-container">
+      <%= form_for :sessions, url: :login do |form| %>
+      
+        <%= form.email_field :email, :class => "form-login", :placeholder => "E-mail" %>
+        
+        <%= form.password_field :password, :class => "form-login", :placeholder=> "Senha" %>
+        
         <%= form.submit "Entrar"%>
-
+        
       <% end %>
-
+      
+      <%= button_to "Esqueci minha senha", new_password_path, :id => "esqueci-button", :class => "blue-button blue-long-text", :method => :get %>
       <div class = "botoes">
-  			<button type="button" class = "blue-button blue-long-text" id="esqueci-button">
-  			  <%= link_to 'Esqueci minha senha', new_password_path %>
-  			</button>
-  			<%= button_to "Cadastro", new_user_path(@user), :id => "cadastro-button", :class => "blue-button", :method => :get %>
-  		</div>
-	  </div>
-	  
-	</section>
+        <%= button_to "Cadastro", new_user_path(@user), :id => "cadastro-button", :class => "blue-button", :method => :get %>
+      </div>
+    </div> 
+  </section>
 </div>
