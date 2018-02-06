@@ -10,6 +10,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+    @assignmentproj = Assignmentproj.new
   end
 
   # GET /projects/new
@@ -31,7 +32,7 @@ class ProjectsController < ApplicationController
         tp = TeamProject.new(team_id: params[:team_id], project_id: @project.id)
         tp.save
         pa = ProjectAssignmentproj.new(assignmentproj_id: params[:assignmentproj_id],
-          project_id: @project.id)  
+          project_id: @project.id)
         pa.save
 
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
