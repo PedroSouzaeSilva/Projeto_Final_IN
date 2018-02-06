@@ -3,6 +3,11 @@ class Project < ApplicationRecord
   belongs_to :user_manager, :class_name => 'User'
   belongs_to :user_pmo, :class_name => 'User'
 
+  
+  #Para relacionar projects com assignmentsproj
+  has_many :project_assignmentprojs
+  has_many :assignmentprojs, through: :project_assignmentprojs
+
   #Para relacionar users e projects
   has_many :user_projects
   has_many :users, through: :user_projects

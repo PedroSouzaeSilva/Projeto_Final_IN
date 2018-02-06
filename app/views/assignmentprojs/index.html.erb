@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Assignmentprojs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Realized</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @assignmentprojs.each do |assignmentproj| %>
+      <tr>
+        <td><%= assignmentproj.name %></td>
+        <td><%= assignmentproj.description %></td>
+        <td><%= assignmentproj.realized %></td>
+        <td><%= link_to 'Show', assignmentproj %></td>
+        <td><%= link_to 'Edit', edit_assignmentproj_path(assignmentproj) %></td>
+        <td><%= link_to 'Destroy', assignmentproj, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Assignmentproj', new_assignmentproj_path %>

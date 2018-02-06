@@ -27,6 +27,13 @@
         <div class="perfil-infos">
           <div class="projetos">
             <a href="#">Projetos</a>
+            <% @user.teams.each do |a| %>
+              <% a.projects.each do |b| %>
+                <p><%= b.name %></p>
+              <% end %>
+            <% end %>
+
+
           </div>
           <div class="rendimento">
             <a href="#">Rendimento</a>
@@ -34,5 +41,5 @@
         </div>
       </div>
     </section>
-    
+
     <%= button_to "Voltar", users_path, :class => "blue-button perfil-voltar perfil-btn", :method => :get %>
