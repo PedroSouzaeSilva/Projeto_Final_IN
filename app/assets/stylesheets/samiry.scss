@@ -148,7 +148,7 @@
 // Show do Time
 
 .new-time-criado{
-  margin: 50px auto;
+  margin: 50px auto 0;
 }
 
 
@@ -343,3 +343,264 @@
   text-decoration: none;
   font-weight: 300;
 }
+
+//Index Projetos
+
+.trello-board-img{
+  display: none;
+}
+
+.trello-img{
+  width: 100px;
+}
+
+.index-proj{
+  max-width: 920px;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+
+.index-proj h1{
+  margin: 50px auto 0;
+  display: block;
+  font-weight: 400;
+  font-size: 3em;
+}
+
+.index-proj-container{
+  max-width: 920px;
+  margin: 50px auto;
+  position: relative;
+  display: block;
+  border-radius: 20px;
+}
+
+.proj-button-edit img{
+  width: 35px;
+  position: absolute;
+  right: 70px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.proj-button-delete img{
+  width: 25px;
+  position: absolute;
+  right: 20px;
+  bottom: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.index-proj-ind{
+  width: 920px;
+  display: inline-table;
+  appearance: none;
+  outline: 0;
+  background-color: #E5E5EC;
+  border: 0;
+  padding: 10px 15px;
+  color: #222222;
+  border-radius: 10px;
+  font-size: 1em;
+  margin-top: 30px;
+  position: relative;
+}
+
+.proj-bar-container{
+  background-color: #222222;
+  color: #E5E5EC;
+  width: 920px;
+  font-size: 1.5em;
+  display: inline-table;
+  font-weight: 400;
+}
+
+.index-proj-ind a{
+  color: #222222;
+}
+
+.proj-bar-container th{ // font dos titulos das categorias
+  font-weight: 400;
+}
+
+.proj-bar-nome{
+  width: 190px;
+  padding-left: 15px;
+
+}
+
+.proj-bar-prazo{
+  width: 200px;
+}
+
+.proj-bar-preco{
+  width: 120px;
+}
+
+.proj-bar-gerente{
+  width: 245px;
+  padding-right: 15px;
+}
+
+.proj-bar-vazio{
+  width: 300px;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.proj-ind-name{
+  text-align: left;
+  width: 175px;
+}
+
+.proj-ind-data{
+  text-align: center;
+  width: 120px;
+}
+
+.proj-ind-preco{
+  width: 150px;
+  text-align: center;
+}
+
+.proj-ind-gerente{
+  text-align: center;
+  width: 160px;
+}
+
+.proj-ind-trello{
+  width: 180px;
+  text-align: center;
+}
+
+// Novo Projeto
+
+.new-proj{
+  max-width: 920px;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+
+.new-proj h1{
+  margin: 50px auto;
+  display: block;
+  font-weight: 400;
+  font-size: 3em;
+}
+
+.new-proj-container{
+  max-width: 920px;
+  margin: 50px auto;
+  position: relative;
+  display: block;
+  border-radius: 20px;
+}
+
+.new-proj-container{
+  max-width: 800px;
+  background-color: rgba(20, 5, 50, 0.3);
+  border-radius: 20px;
+  margin: 0 auto 50px;
+  padding: 30px;
+}
+
+.new-proj-container input{
+  margin: 20px auto;
+}
+
+.new-proj-container select{
+  margin: 20px;
+}
+
+#team_id{
+  display: block;
+  margin: 20px auto;
+  width: 250px;
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 1.2em;
+  color: #9F9EA3;
+  background-color: rgba(5,5,5,0);
+  border: 1px solid #9F9EA3;
+  border-radius: 10px;
+  font-style: italic;
+}
+
+#gerente_id{
+  display: block;
+  margin: 20px 60px;
+  width: 250px;
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 1.2em;
+  color: #9F9EA3;
+  background-color: rgba(5,5,5,0);
+  border: 1px solid #9F9EA3;
+  border-radius: 10px;
+  font-style: italic;
+  float: left;
+}
+
+#pmo_id{
+  display: block;
+  margin: 20px 60px;
+  width: 250px;
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 1.2em;
+  color: #9F9EA3;
+  background-color: rgba(5,5,5,0);
+  border: 1px solid #9F9EA3;
+  border-radius: 10px;
+  font-style: italic;
+  float: right;
+}
+
+#tarefa_id{
+  display: block;
+  margin: 20px auto;
+  width: 250px;
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 1.2em;
+  color: #9F9EA3;
+  background-color: rgba(5,5,5,0);
+  border: 1px solid #9F9EA3;
+  border-radius: 10px;
+  font-style: italic;
+}
+
+.new-proj-prazo h2{
+  font-size: 1.5em;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.new-proj-prazo select{
+  display: inline-block;
+  margin: 10px 20px;
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 1.2em;
+  color: #9F9EA3;
+  background-color: rgba(5,5,5,0);
+  border: 1px solid #9F9EA3;
+  border-radius: 10px;
+  font-style: italic;
+}
+
+#project_content{
+  background-color: #E5E5EC;
+  color: #222222;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.new-proj-container .botoes input{
+  margin: 20px auto;
+}
+
+// Projeto
