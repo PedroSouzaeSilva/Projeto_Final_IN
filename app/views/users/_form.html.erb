@@ -10,10 +10,10 @@
       </ul>
     </div>
   <% end %>
-
+  
   <section class="cadastro">
     <div class="field-avatar">
-      <label for="avatar", class="botao" >Selecionar imagem...</label>
+    <label for="avatar", class="botao" >Selecionar imagem...</label>
      <%= form.file_field :avatar, id: :avatar %>
       <div class="file-name">
         <span id='file-name'>Nenhuma Imagem Selecionada</span>
@@ -33,7 +33,6 @@
 
         <% if logged_in? %>
           <% if current_user.admin %>
-<<<<<<< HEAD
             <div class = "diretoria-form-new_user">
               <%= form.label "Diretoria" %>
               <%= select("", "direction_id", Direction.all.collect {|direction| [ direction.name,
@@ -44,16 +43,6 @@
               <%= select("", "occupation_id", Occupation.all.collect {|occupation| [ occupation.name_occu,
                   occupation.id ] }, {include_blank: "Cargo"}) %>
             </div>
-=======
-            <%= form.label "Diretoria" %>
-            <%= select("", "direction_id", Direction.all.collect {|direction| [ direction.name,
-              direction.id ] }, {include_blank: "Diretoria"}) %>
-
-            <%= form.label "Cargo" %>
-            <%= select("", "occupation_id", Occupation.all.collect {|occupation| [ occupation.name_occu,
-                occupation.id ] }, {include_blank: "Cargo"}) %>
-
->>>>>>> rafael
           <% end %>
         <% end %>
 
