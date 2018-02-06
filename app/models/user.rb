@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
-  validates_presence_of :avatar
+  validates_presence_of :avatar, message: ": Por favor, insira uma foto"
+  
 
   mount_uploader :avatar, AvatarUploader
 

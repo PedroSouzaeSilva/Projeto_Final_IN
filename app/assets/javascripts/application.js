@@ -11,6 +11,6 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require sweetalert
 //= require jquery
-//= require turbolinks
 //= require_tree .

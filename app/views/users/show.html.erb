@@ -4,7 +4,7 @@
       <div class="perfil-container">
         <div class="perfil-foto">
           <%= image_tag @user.avatar.thumb.url, alt: "Foto de Perfil", class: "foto" if !@user.avatar.nil? unless @user.avatar.blank?%>
-          <%= button_to "Editar", edit_user_path(@user), :class => "perfil-btn-editar blue-btn", :method => :get %>
+          <%= button_to "Editar", edit_user_path(@user), :class => "perfil-btn-editar blue-button", :method => :get %>
           <button type="submit" class = "perfil-brn">Permissões</button>
         </div>
         <div class="perfil-dados">
@@ -42,4 +42,5 @@
       </div>
     </section>
 
-    <%= button_to "Voltar", users_path, :class => "btn-voltar perfil-btn", :method => :get %>
+
+    <%= button_to "Voltar", users_path, :class => "blue-button perfil-voltar perfil-btn", :method => :get %>
