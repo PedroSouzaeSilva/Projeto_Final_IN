@@ -1,4 +1,5 @@
 class UserProject < ApplicationRecord
-  #belongs_to :project
-  #belongs_to :user
+  #Relacionar as tabelas "usuarios" e "projetos"
+  belongs_to :project
+  belongs_to :user
 end

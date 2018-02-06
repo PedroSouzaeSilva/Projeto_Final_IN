@@ -1,0 +1,37 @@
+<%= form_with(model: goal, local: true) do |form| %>
+  <% if goal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(goal.errors.count, "error") %> prohibited this goal from being saved:</h2>
+
+      <ul>
+      <% goal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label "Nome da Meta" %>
+    <%= form.text_field :name, id: :goal_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Data de Criação" %>
+    <%= form.datetime_select :date_in, id: :goal_date_in %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Prazo" %>
+    <%= form.datetime_select :deadline, id: :goal_deadline %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Finalizado?" %>
+    <%= form.check_box :finalized, id: :goal_finalized %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

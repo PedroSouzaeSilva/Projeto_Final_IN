@@ -21,6 +21,16 @@
     <%= select("", "team_id", Team.all.collect {|team| [ team.name,
       team.id ] }, {include_blank: "Time"}) %>
 
+      <%= form.label "Gerente" %>
+      <%= select("", "user_manager_id", User.all.collect {|user| [ user.name,
+        user.id ] }, {include_blank: "Gerente"}) %>
+
+        <%= form.label "PMO" %>
+        <%= select("", "user_pmo_id", User.all.collect {|user| [ user.name,
+          user.id ] }, {include_blank: "PMO"}) %>
+
+
+
 
   <div class="field">
     <%= form.label "Prazo" %>
