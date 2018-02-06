@@ -6,12 +6,12 @@
 		</div>
 	</section>
   <section class="login">
-	  <div class="container">
-      <%= form_for :sessions, class: "form", url: :login do |form| %>
+	  <div class="login-container">
+      <%= form_for :sessions, url: :login do |form| %>
 
-        <%= form.email_field :email, :placeholder => "E-mail" %>
+        <%= form.email_field :email, :class => "form-login", :placeholder => "E-mail" %>
 
-        <%= form.password_field :password, :placeholder=> "Senha" %>
+        <%= form.password_field :password, :class => "form-login", :placeholder=> "Senha" %>
 
         <%= form.submit "Entrar"%>
 

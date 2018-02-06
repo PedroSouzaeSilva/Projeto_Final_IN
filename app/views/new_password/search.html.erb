@@ -14,13 +14,12 @@
       </p>
       
       <%= form_for :user, url: :new_password do |form| %>
-        <%= form.label "Email" %>
         <%= form.email_field :email %>
       
         <%= form.submit "Busca", :class=> "blue-button blue-long-text"%>
       <% end %>
     </div>
   </section>
-  <%= button_to "Voltar", login_path, :class => "blue-button perfil-voltar" %>
+  <%= button_to "Voltar", login_path, :class => "btn-voltar" %>
   
 </div>

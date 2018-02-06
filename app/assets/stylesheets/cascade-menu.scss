@@ -46,11 +46,14 @@ li:nth-child(5){ top: 300px; z-index: 5;}
 ul {position: relative;}
 
 
-li:hover {
-  background: #00CCFF;
+.cascade-ul{
+  li:hover {
+    background: #00CCFF;
+  }
 }
 
 .cascade-ul li a{
+  padding-right: 120px;
   text-decoration: none;
   color: #eeeeee;
 }
