@@ -9,4 +9,14 @@ class DirectionsController < ApplicationController
   def show
     #@users=User.where(:direction_id => @direction.id)
   end
+
+  def gp
+    d = Direction.find_by(name: "Diretoria de Gerência de Pessoas")
+    @acessores=User.find_by_sql("select users.* from users where users.id in (select user_directions.user_id from user_directions where user_directions.direction_id = #{d.id})")
+    #Carrega todos os usuarios da dietoria
+    #@diretor = @acessores.where(manager: true)[0] #carrega aquele que e da diretoria e tem o acessor como treu
+    #@tarefas = Task.where(directorship_id: 3).order(deadline: :desc).paginate(:page => params[:page], :per_page => 10)
+    #@task = Task.new
+  end
+
 end

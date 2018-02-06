@@ -39,7 +39,11 @@
               <% end %>
             </td>
 
-            <td class="user-times">esperando ter algo aqui</td>
+            <td class="user-times">
+              <% user.directions.each do |direction| %>
+              <%= direction.name %>
+              <% end %>
+            </td>
 
             <td class="user-button-edit"><%= link_to image_tag("edit_icon.png", alt:"Editar"), edit_user_path(user) %></td>
             <td class="user-button-delete"><%= link_to image_tag("delete-icon.png", alt:"Editar"), user, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>

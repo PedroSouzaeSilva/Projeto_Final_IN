@@ -37,7 +37,8 @@
     <strong>Tarefas/Tarefa realizada?:</strong>
       <td>
         <% @project.assignmentprojs.each do |assignmentproj| %>
-          <%= assignmentproj.name %>/<%= assignmentproj.realized %>
+          <%= assignmentproj.name %>/<%= link_to assignmentproj.realized,
+            edit_assignmentproj_path(assignmentproj) %>
           <br>
         <% end %>
       </td>
