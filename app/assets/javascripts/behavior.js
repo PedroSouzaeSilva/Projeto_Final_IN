@@ -14,7 +14,7 @@ $(document).ready(function(){
       console.log("Behavior funcionando");
    });
    
-   /* Função para controlar o sub-menu. Ao clickar, adiciona-se a classe show que põe ele em display block */
+   // Função para controlar o sub-menu. Ao clickar, adiciona-se a classe show que põe ele em display block
    
    $(document).on("click", ".dropdown", function (e) {
        $(".dropdown-content").removeClass("show");
@@ -30,11 +30,25 @@ $(document).ready(function(){
       }
   });
   
-  /*código copiado para o menu hambúrguer e cascade*/
+  //---------código copiado e editado para o menu hambúrguer e cascade
   
   $(document).on('click', ".bt-menu", function(e) {
-    $('body').toggleClass('menu-open');
-    $(".cascade-ul").toggleClass( "loading" );
+      $('body').toggleClass('menu-open');
+      $(".cascade-ul").toggleClass( "loading" );
   });
   
+  
+  //----------- Função de verificação de campo vazio
+  /*Basicamente, um botão com a classe verifier inicia uma verificação em todos
+  os locais com a classe verify-this que são filhos da verify-father para
+  verificar se eles estão não-nulos*/
+  
+  $(document).on("click", ".verifier", function(e){
+      e.preventDefault();
+      ($(".verifier").parents(".verify-father")).find(".verify-this").addClass("Teste");
+      if(($(".verifier").parents(".verify-father")).find(".verify-this").val().length < 1) {
+          e.preventDefault();
+          swal("Campo vazio", "", "error");
+      }
+  });
 });

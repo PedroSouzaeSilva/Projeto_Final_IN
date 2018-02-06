@@ -6,14 +6,14 @@
 		</div>
 	</section>
 	<section class="login">
-    <div class="login-container">
+    <div class="login-container verify-father"">
       <%= form_for :sessions, url: :login do |form| %>
       
-        <%= form.email_field :email, :class => "form-login", :placeholder => "E-mail" %>
-        <%= form.password_field :password, :class => "form-login", :placeholder=> "Senha" %>
+        <%= form.email_field :email, :class => "form-login verify-this", :placeholder => "E-mail" %>
+        <%= form.password_field :password, :class => "form-login verify-this", :placeholder=> "Senha" %>
         
         <div class = "botoes">
-          <%= form.submit "Entrar",  :class => ""%>
+          <%= form.submit "Entrar",  :class => "verifier"%>
         </div>
       
       <% end %>
