@@ -1,6 +1,10 @@
-<h1>Editar Perfil</h1>
+<div class = "editar-user">
+    <h1>Editar Perfil</h1>
+</div>
 
 <%= render 'form', user: @user %>
 
-<%= link_to 'Ver Perfil', @user %> |
-<%= link_to 'Todos os Membros', users_path %>
+<div class = "botoes-edit-users">
+    <%= link_to 'Ver Perfil', @user %>
+    <%= link_to 'Todos os Membros', users_path %>
+</div>
