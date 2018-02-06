@@ -19,12 +19,21 @@
   <strong>Descrição:</strong>
   <%= @project.content %>
 </p>
+<p>
+  <strong>Gerente:</strong>
+  <%= @project.user_manager %>
+</p>
+<p>
+  <strong>PMO:</strong>
+  <%= @project.user_pmo %>
+</p>
   <strong>Time(s) alocado(s):</strong>
     <td>
       <% @project.teams.each do |team| %>
         <%= link_to team.name, team_path %>
       <% end %>
     </td>
+
     <td><blockquote class="trello-board-compact">
       <a href=<%= @project.trello %>>Trello Board</a>
       </blockquote>

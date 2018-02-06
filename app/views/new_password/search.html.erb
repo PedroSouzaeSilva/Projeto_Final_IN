@@ -1,12 +1,26 @@
-<h1>Esqueci minha senha<h1>
-
-<p>
-  Digite seu email para recuperar:
-</p>
-
-<%= form_for :user, url: :new_password do |form| %>
-  <%= form.label "Email" %>
-  <%= form.email_field :email %>
-
-  <%= form.submit "Busca" %>
-<% end %>
+<div class="wrapper">
+  <section class = "logo-container">
+		<%= image_tag("logo-in-resized.png",  alt: "Logo In", class: "logo1") %>
+		<div class = "lobo-container">
+      <%= image_tag("lobo.png",  alt: "Lobo", class: "lobo") %>
+		</div>
+	</section>
+  <section class = "recover-password">
+    <div class = "recover-container">
+      <h1>Esqueci minha senha<h1>
+        
+      <p>
+        Digite seu email para recuperar:
+      </p>
+      
+      <%= form_for :user, url: :new_password do |form| %>
+        <%= form.label "Email" %>
+        <%= form.email_field :email %>
+      
+        <%= form.submit "Busca", :class=> "blue-button blue-long-text"%>
+      <% end %>
+    </div>
+  </section>
+  <%= button_to "Voltar", login_path, :class => "blue-button perfil-voltar" %>
+  
+</div>

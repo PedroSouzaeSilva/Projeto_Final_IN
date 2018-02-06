@@ -1,4 +1,4 @@
-<%= form_with(model: user, local: true) do |form| %>
+<%= form_with(model: user, local: true, multipart: true) do |form| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -11,33 +11,11 @@
     </div>
   <% end %>
 
-  <%= image_tag("logo-in-resized.png", alt:"Logo In Junior", class:"logo1") %>
-
   <section class="cadastro">
-    <%= image_tag("lobo.png", alt:"Lobo", class:"lobo") %>
-
-    <% if logged_in? %>
-      <% if current_user.admin %>
-        <%= form.label "Cargo" %>
-        <%= select("", "occupation_id", Occupation.all.collect {|occupation| [ occupation.name_occu,
-          occupation.id ] }, {include_blank: "Cargo"}) %>
-      <% end %>
-    <% end %>
-
-    <% if logged_in? %>
-      <% if current_user.admin %>
-        <%= form.label "Diretoria" %>
-        <%= select("", "direction_id", Direction.all.collect {|direction| [ direction.name,
-          direction.id ] }, {include_blank: "Diretoria"}) %>
-      <% end %>
-    <% end %>
-  <br>
-
 
     <div class="field-avatar">
-      <label for="input-file", class="botao" >Selecionar imagem...</label>
+      <label for="avatar", class="botao" >Selecionar imagem...</label>
      <%= form.file_field :avatar, id: :avatar %>
-      <input id='input-file' type='file' value=''></input>
       <div class="file-name">
         <span id='file-name'>Nenhuma Imagem Selecionada</span>
       </div>
@@ -55,6 +33,20 @@
         </div>
 
 
+        <% if logged_in? %>
+          <% if current_user.admin %>
+            <%= form.label "Diretoria" %>
+            <%= select("", "direction_id", Direction.all.collect {|direction| [ direction.name,
+              direction.id ] }, {include_blank: "Diretoria"}) %>
+
+            <%= form.label "Cargo" %>
+            <%= select("", "occupation_id", Occupation.all.collect {|occupation| [ occupation.name_occu,
+                occupation.id ] }, {include_blank: "Cargo"}) %>
+
+          <% end %>
+        <% end %>
+
+
         <div class="field">
           <%= form.password_field :password, placeholder:"Senha", id: :usuario_password %>
         </div>
@@ -63,9 +55,6 @@
           <%= form.password_field :password_confirmation, placeholder:"Confirme a senha", id: :usuario_password_confirmation %>
         </div>
 
-
-
-
         <div class="botoes users-new">
           <%= form.submit "Criar Conta"%>
         </div>
@@ -73,7 +62,4 @@
     </div>
 
     <%= link_to 'Voltar',  users_path , :class=> "users-new-voltar"%>
-
-  </div>
-
 <% end %>

@@ -1,0 +1,183 @@
+@media only screen and (max-width: 960px){
+
+  #hamb-button {
+    display: block;
+  }
+
+  .navbar div {
+    display: none;
+  }
+
+  // Index Usuario
+
+  .index-users{
+    width: 600px;
+  }
+
+  .index-users h1{
+    font-size: 2em;
+  }
+
+  .users-bar-container{
+    width: 600px;
+    font-size: 1.2em;
+  }
+
+  .user-body{
+    width: 600px;
+    font-size: 0.8em;
+    padding: 5px 10px;
+  }
+
+  .user-foto img{
+    width: 120px;
+    height: 120px;
+  }
+
+
+  .user-bar-foto{
+    padding-left: 10px;
+    width: 185px;
+  }
+
+  .user-bar-nomemail{
+    width:280px;
+  }
+
+  .user-bar-cargos{
+    width: 170px;
+  }
+
+  .user-bar-times{
+    width: 200px;
+    padding-right: 10px;
+  }
+
+  .user-body-nomemail{
+    width: 190px;
+  }
+
+  .user-cargo{
+    width: 190px;
+  }
+
+  .user-times{
+    width: 190px;
+  }
+
+  .user-button-edit img{
+    width: 25px;
+  }
+
+  .user-button-delete img{
+    width: 15px;
+  }
+
+  @media only screen and (max-width: 600px){
+
+    .index-users {
+      width: 300px;
+    }
+
+    .index-users h1{
+      font-size: 1.5em;
+      font-weight: 400;
+      margin-top: 60px;
+    }
+
+    .users-bar-container{
+      display: none;
+    }
+
+    .user-body{
+      width: 300px;
+      margin-top: 10px;
+      display: block;
+    }
+
+    .user-foto{
+      margin: 0 auto;
+      display: block;
+    }
+
+    .user-foto img{
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+      display: block;
+      margin-top: 20px;
+    }
+
+    .user-nome{
+      margin-bottom: 20px;
+    }
+
+    .user-body-nomemail{
+      width: 275px;
+      margin: 30px auto;
+    }
+
+    .user-body-nomemail::after{
+      content: '';
+      display: table;
+      clear: both;
+      width: 50px;
+      background-color: #222222;
+      margin: 10px auto;
+      margin-top: 30px;
+    }
+
+    .user-cargo{
+      width: 275px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .user-cargo::after{
+      content: '';
+      display: table;
+      clear: both;
+      width: 50px;
+      background-color: #222222;
+      margin: 20px auto;
+      margin-bottom: 30px;
+    }
+
+    .user-times{
+      width: 275px;
+      display: block;
+      margin: 10px auto;
+      margin-bottom: 30px;
+    }
+
+    .user-button-edit img{
+      top: auto;
+      bottom: 5px;
+    }
+
+    .user-button-delete img{
+      right: 100%;
+      top: auto;
+      bottom: 10px;
+      left: 10px;
+    }
+
+      @media only screen and (max-width: 320px){
+
+        .cadastro input:focus{
+          width: 250px;
+        }
+
+        .login input:focus{
+          width: 250px;
+        }
+
+
+
+
+
+      }
+
+  }
+
+}

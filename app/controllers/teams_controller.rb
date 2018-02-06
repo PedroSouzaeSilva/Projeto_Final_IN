@@ -28,6 +28,8 @@ class TeamsController < ApplicationController
 
     respond_to do |format|
       if @team.save
+        ut = UserTeam.new(user_id: params[:user_id], team_id: @team.id)
+        ut.save
         format.html { redirect_to @team, notice: 'Team was successfully created.' }
         format.json { render :show, status: :created, location: @team }
       else

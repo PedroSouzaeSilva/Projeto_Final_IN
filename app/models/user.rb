@@ -1,7 +1,15 @@
 class User < ApplicationRecord
   has_secure_password
+  validates_presence_of :avatar
 
   mount_uploader :avatar, AvatarUploader
+
+  has_many :manager_projects, :class_name => 'Project', :foreign_key => 'user_manager_id'
+  has_many :pmo_projects, :class_name => 'Project', :foreign_key => 'user_pmo_id'
+
+  #Para relacionar users e projects
+  has_many :user_projects
+  has_many :projects, through: :user_projects
 
   #Para relacionar users e teams
   has_many :user_teams

@@ -1,0 +1,332 @@
+*{
+  font-family: 'Exo 2', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+// Index Usuario
+
+
+.user-body{
+  position: relative;
+}
+
+.user-foto img{
+  width: 150px;
+  height: 150px;
+}
+
+.nome-email{
+  text-align: center;
+}
+
+.user-nome{
+  margin-bottom: 50px;
+}
+
+.user-nome a{
+  color: #222222;
+}
+
+.user-body-nomemail{
+  width: 275px;
+}
+
+.user-cargo{
+  width: 230px;
+  text-align: center;
+}
+
+.user-button-edit img{
+  width: 30px;
+  position: absolute;
+  right: 5px;
+  top: 5px;;
+}
+
+.user-button-delete img{
+  width: 20px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;;
+}
+
+.user-times{
+  width: 230px;
+  text-align: center;
+}
+
+.user-bar-foto{
+  width: 165px;
+  padding-left: 15px;
+}
+
+.user-bar-nomemail{
+  width: 280px;
+}
+
+.user-bar-cargos{
+  width: 230px;
+}
+
+.user-bar-times{
+  width: 245px;
+  padding-right: 15px;
+}
+
+// New Time
+
+
+.new-time{
+  max-width: 920px;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+
+}
+
+.new-time h1{
+  display: block;
+  margin: 50px auto;
+  font-weight: 400;
+  font-size: 3em;
+}
+
+.new-user-container{
+  max-width: 500px;
+  background-color: rgba(20,5,50,0.3);
+	border-radius: 20px;
+	margin: 0 auto;
+  padding: 50px;
+}
+
+#team_name{
+  margin-bottom: 50px;
+}
+
+#user_id{
+  display: block;
+  margin: 0 auto 50px auto;
+  width: 250px;
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 1.2em;
+  color: #9F9EA3;
+  background-color: rgba(5,5,5,0);
+  border: 1px solid #9F9EA3;
+  border-radius: 10px;
+  font-style: italic;
+}
+
+.new-time .actions input{
+  background-color: #E5E5EC;
+  color: #222222;
+}
+
+.new-time .actions input:hover{
+  width: 250px;
+}
+
+.new-time a{
+  outline: 0;
+  border: 0;
+  border-radius: 10px;
+  width: 250px;
+  cursor: pointer;
+  font-size: 1.5em;
+  padding: 10px 15px;
+  background-color: rgba(5,5,15,0.5);
+  color:#9F9EA3;
+  display: block;
+  margin: 50px auto 0 auto;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 300;
+}
+
+// Time criado
+
+.new-time-criado{
+  margin: 50px auto;
+}
+
+
+.new-time-criado-container{
+  max-width: 500px;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  background-color: rgba(20,5,50,0.3);
+	border-radius: 20px;
+  padding: 50px;
+  position: relative;
+}
+
+.new-time-criado-container p{
+  font-size: 2em;
+}
+
+.new-time-criado-container strong{
+  font-size: 2.2em;
+  font-weight: 400;
+}
+
+.new-time-criado-container img{
+  width: 30px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.new-time-criado-voltar{
+  max-width: 400px;
+  margin: 0 auto;
+  display: block;
+}
+
+.new-time-criado-voltar a{
+  outline: 0;
+  border: 0;
+  border-radius: 10px;
+  width: 250px;
+  cursor: pointer;
+  font-size: 1.5em;
+  padding: 10px 15px;
+  background-color: rgba(5,5,15,0.5);
+  color:#9F9EA3;
+  display: block;
+  margin: 50px auto 0 auto;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 300;
+}
+
+.nome-membros-time{
+  background-color: #9F9EA3;
+  color: #222222;
+  margin: 20px auto 0;
+  text-align: center;
+  padding: 30px 20px 20px;
+  border-radius: 0 15px 0 15px;
+
+}
+
+.nome-membros-time a{
+  text-decoration: none;
+  color: #222222;
+
+}
+
+// Edicao de Time
+
+.edicao-time{
+  max-width: 400px;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+
+.edicao-time h1{
+  display: block;
+  margin: 50px auto;
+  font-weight: 400;
+  font-size: 3em;
+}
+
+.edicao-time .actions input{
+  background-color: #E5E5EC;
+  color: #222222;
+}
+
+.edicao-time-botoes a{
+  outline: 0;
+  border: 0;
+  border-radius: 10px;
+  width: 250px;
+  cursor: pointer;
+  font-size: 1.5em;
+  padding: 10px 15px;
+  background-color: rgba(5,5,15,0.5);
+  color:#9F9EA3;
+  display: block;
+  margin: 50px auto 0 auto;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 300;
+}
+
+//  Index times
+
+.index-times{
+  max-width: 920px;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+
+.index-times-container{
+  max-width: 600px;
+  margin: 50px auto;
+  position: relative;
+  display: block;
+  background-color: rgba(20,5,50,0.3);
+  border-radius: 20px;
+  padding: 50px 50px 70px;
+}
+
+.index-times h1{
+  display: block;
+  margin: 50px auto;
+  font-weight: 400;
+  font-size: 3em;
+}
+
+.index-times-time{
+  background-color: #9F9EA3;
+  margin: 20px auto 0;
+  text-align: center;
+  padding: 20px;
+  border-radius: 0 15px 0 15px;
+  display: inline-block;
+  position: relative;
+  width: 400px;
+}
+
+.index-times-time a{
+  color: #222222;
+  font-size: 1.3em;
+}
+
+.index-times .editar img{
+  width: 40px;
+  position: absolute;
+  right: 70px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.index-times .excluir img{
+  width: 35px;
+  position: absolute;
+  right: 20px;
+  bottom: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.index-times-novo{
+  outline: 0;
+  border: 0;
+  border-radius: 10px;
+  width: 250px;
+  cursor: pointer;
+  font-size: 1.5em;
+  padding: 10px 15px;
+  background-color: rgba(5,5,15,0.5);
+  color:#9F9EA3;
+  display: block;
+  margin: 50px auto 0 auto;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 300;
+}
