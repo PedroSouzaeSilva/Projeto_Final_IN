@@ -10,49 +10,49 @@
       </ul>
     </div>
   <% end %>
-
+  
   <section class="cadastro">
-
     <div class="field-avatar">
-      <label for="avatar", class="botao" >Selecionar imagem...</label>
+    <label for="avatar", class="botao" >Selecionar imagem...</label>
      <%= form.file_field :avatar, id: :avatar %>
       <div class="file-name">
         <span id='file-name'>Nenhuma Imagem Selecionada</span>
       </div>
     </div>
-
-
+    
     <div class="cadastro-container">
-      <div class="form users-new">
+      <div class="users-new">
         <div class="field">
-            <%= form.text_field :name, placeholder:"Nome", id: :user_name %>
+            <%= form.text_field :name, :class => "form-cadastro", placeholder:"Nome", id: :user_name %>
         </div>
 
         <div class="field">
-          <%= form.text_field :email, placeholder:"E-mail", id: :user_email %>
+          <%= form.text_field :email, :class => "form-cadastro", placeholder:"E-mail", id: :user_email %>
         </div>
 
 
         <% if logged_in? %>
           <% if current_user.admin %>
-            <%= form.label "Diretoria" %>
-            <%= select("", "direction_id", Direction.all.collect {|direction| [ direction.name,
-              direction.id ] }, {include_blank: "Diretoria"}) %>
-
-            <%= form.label "Cargo" %>
-            <%= select("", "occupation_id", Occupation.all.collect {|occupation| [ occupation.name_occu,
-                occupation.id ] }, {include_blank: "Cargo"}) %>
-
+            <div class = "diretoria-form-new_user">
+              <%= form.label "Diretoria" %>
+              <%= select("", "direction_id", Direction.all.collect {|direction| [ direction.name,
+                direction.id ] }, {include_blank: "Diretoria"}) %>
+            </div>
+            <div class = "cargo-form-new_user">
+              <%= form.label "Cargo" %>
+              <%= select("", "occupation_id", Occupation.all.collect {|occupation| [ occupation.name_occu,
+                  occupation.id ] }, {include_blank: "Cargo"}) %>
+            </div>
           <% end %>
         <% end %>
 
 
         <div class="field">
-          <%= form.password_field :password, placeholder:"Senha", id: :usuario_password %>
+          <%= form.password_field :password, :class => "form-cadastro", placeholder:"Senha", id: :usuario_password %>
         </div>
 
         <div class="field">
-          <%= form.password_field :password_confirmation, placeholder:"Confirme a senha", id: :usuario_password_confirmation %>
+          <%= form.password_field :password_confirmation, :class => "form-cadastro", placeholder:"Confirme a senha", id: :usuario_password_confirmation %>
         </div>
 
         <div class="botoes users-new">
@@ -60,6 +60,4 @@
         </div>
       </div>
     </div>
-
-    <%= link_to 'Voltar',  users_path , :class=> "users-new-voltar"%>
 <% end %>

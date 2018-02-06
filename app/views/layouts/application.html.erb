@@ -30,7 +30,7 @@
               <li class = "cascade"><span>Metas</span></li>
               <li class = "cascade"><span><%= link_to 'Membros',  users_path , :class=> "users-cascade"%></span></li>
               <li class = "cascade"><span>Células</span></li>
-              <li class = "cascade"><span>Diretorias</span></li>
+              <li class = "cascade"><span><%= link_to 'Diretorias',  directions_path , :class=> "directions-cascade"%></span></li>
               <li class = "cascade"><span><%= link_to 'Projetos',  projects_path , :class=> "projects-cascade"%></span></li>
             </ul>
           </section>
@@ -56,11 +56,11 @@
               <div class="dropdown">
                 <a class="dropbtn">Diretorias</a>
                 <div class="dropdown-content myDropdown">
-                  <a href="#">Presidência</a>
-                  <a href="#">Processos</a>
-                  <a href="#">Gestão de<br>Pessoas</a>
-                  <a href="#">Marketing</a>
-                  <a href="#">Financeiro</a>
+                  <%= link_to 'Presidência',  presidencia_path , :class=> "presidencia-navbar"%>
+                  <%= link_to 'Projetos',  projetos_path , :class=> "projetos-navbar"%>
+                  <%= link_to 'Financeiro', financeiro_path , :class=> "financeiro-navbar"%>
+                  <%= link_to 'Marketing',  marketing_path , :class=> "marketing-navbar"%>
+                  <%= link_to 'Gestão de Pessoas',  gp_path , :class=> "gp-navbar"%>
                 </div>
               </div>
 
@@ -77,7 +77,7 @@
                 <a class="dropbtn">Membros</a>
                 <div class="dropdown-content myDropdown">
                   <%= link_to 'Lobos', users_path, :class=> "users-navbar"%>
-                  <a href="#">Times</a>
+                  <%= link_to 'Times', teams_path, :class=> "teams-navbar"%>
                 </div>
               </div>
 

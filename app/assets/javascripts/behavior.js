@@ -1,13 +1,12 @@
 $(document).ready(function(){
    
    /*---- Fadeout dos alerts ----*/
-
+   
    $(document).on('mouseover', ".pop-up-container", function(e) {
        window.setTimeout(function(){
            $(".pop-up-container").fadeOut();
-       }, 1000);
+       }, 500);
    });
-   
    
    /*----- Função teste constante ----*/
    
