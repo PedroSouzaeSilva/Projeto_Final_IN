@@ -81,19 +81,19 @@
       </td>
 
     <br>
-    <div class="projeto-nova-tarefa">
+    <div class="projeto-nova-tarefa verify-father">
       <%= form_for @assignmentproj, url: form_criar_tarefa_path, local: true do |form| %>
 
-      <%= form.text_field :name, id: :assignmentproj_name, placeholder:"Nova da Tarefa" %>
+      <%= form.text_field :name, id: :assignmentproj_name, placeholder:"Nova da Tarefa", class:"verify-this" %>
       <div class="projeto-feito">
         <%= form.label "Feito?" %>
         <%= form.check_box :realized, class: "check_box"%>
       </div>
       <%= hidden_field_tag :project_id, @project.id %>
-      <%= form.submit "Adicionar tarefa", class:"add_task perfil-voltar perfil-btn blue-button" %>
+      <%= form.submit "Adicionar tarefa", class:"add_task perfil-voltar perfil-btn blue-button verifier" %>
     </div>
 
-    <td><%= link_to image_tag("edit_icon.png", alt:"Editar"), edit_project_path(@project), class:"proj-button-edit" %></td> 
+    <td><%= link_to image_tag("edit_icon.png", alt:"Editar"), edit_project_path(@project), class:"proj-button-edit" %></td>
 
     <% end %>
 
