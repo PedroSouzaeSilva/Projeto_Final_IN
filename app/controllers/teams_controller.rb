@@ -30,7 +30,7 @@ class TeamsController < ApplicationController
       if @team.save
         ut = UserTeam.new(user_id: params[:user_id], team_id: @team.id)
         ut.save
-        format.html { redirect_to @team, notice: 'Team was successfully created.' }
+        format.html { redirect_to @team, notice: 'Time criado com sucesso.' }
         format.json { render :show, status: :created, location: @team }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@ class TeamsController < ApplicationController
       if @team.update(team_params)
         ut = UserTeam.new(user_id: params[:user_id], team_id: @team.id)
         ut.save
-        format.html { redirect_to @team, notice: 'Team was successfully updated.' }
+        format.html { redirect_to @team, notice: 'Time editado com sucesso.' }
         format.json { render :show, status: :ok, location: @team }
       else
         format.html { render :edit }
@@ -60,7 +60,7 @@ class TeamsController < ApplicationController
   def destroy
     @team.destroy
     respond_to do |format|
-      format.html { redirect_to teams_url, notice: 'Team was successfully destroyed.' }
+      format.html { redirect_to teams_url, notice: 'Time deletado com sucesso.' }
       format.json { head :no_content }
     end
   end

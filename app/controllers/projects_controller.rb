@@ -35,7 +35,7 @@ class ProjectsController < ApplicationController
           project_id: @project.id)
         pa.save
 
-        format.html { redirect_to @project, notice: 'Project was successfully created.' }
+        format.html { redirect_to @project, notice: 'Projeto criado com sucesso.' }
         format.json { render :show, status: :created, location: @project }
       else
         format.html { render :new }
@@ -55,7 +55,7 @@ class ProjectsController < ApplicationController
           project_id: @project.id)
         pa.save
 
-        format.html { redirect_to @project, notice: 'Project was successfully updated.' }
+        format.html { redirect_to @project, notice: 'Projeto editado com sucesso.' }
         format.json { render :show, status: :ok, location: @project }
       else
         format.html { render :edit }
@@ -69,7 +69,7 @@ class ProjectsController < ApplicationController
   def destroy
     @project.destroy
     respond_to do |format|
-      format.html { redirect_to projects_url, notice: 'Project was successfully destroyed.' }
+      format.html { redirect_to projects_url, notice: 'Projeto foi deletado com sucesso.' }
       format.json { head :no_content }
     end
   end

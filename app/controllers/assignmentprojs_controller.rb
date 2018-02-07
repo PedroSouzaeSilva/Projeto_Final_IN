@@ -35,7 +35,7 @@ class AssignmentprojsController < ApplicationController
           project_id: params[:project_id])
         pa.save
         @project = Project.find params[:project_id]
-        format.html { redirect_to @project, notice: 'Assignmentproj was successfully created.' }
+        format.html { redirect_to projects_path(@assignmentproj.id), notice: 'Tarefa criada com sucesso' }
         format.json { render :show, status: :created, location: @assignmentproj }
       else
         format.html { render :new }
@@ -49,7 +49,7 @@ class AssignmentprojsController < ApplicationController
   def update
     respond_to do |format|
       if @assignmentproj.update(assignmentproj_params)
-        format.html { redirect_to @assignmentproj, notice: 'Assignmentproj was successfully updated.' }
+        format.html { redirect_to @assignmentproj, notice: 'Tarefa atualizada com sucesso.' }
         format.json { render :show, status: :ok, location: @assignmentproj }
       else
         format.html { render :edit }
@@ -63,7 +63,7 @@ class AssignmentprojsController < ApplicationController
   def destroy
     @assignmentproj.destroy
     respond_to do |format|
-      format.html { redirect_to assignmentprojs_url, notice: 'Assignmentproj was successfully destroyed.' }
+      format.html { redirect_to assignmentprojs_url, notice: 'Tarefa deletada com sucesso.' }
       format.json { head :no_content }
     end
   end

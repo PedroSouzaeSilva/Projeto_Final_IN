@@ -17,7 +17,7 @@ class NewPasswordController < ApplicationController
         flash[:notice] = "Email com instruções de recuperação enviado"
         redirect_to login_path
     else
-      flash.now[:alert] = "usuario não encontrado"
+      flash.now[:alert] = "Usuario não encontrado"
       render "search"
     end
   end

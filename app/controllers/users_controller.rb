@@ -47,7 +47,7 @@ class UsersController < ApplicationController
         uo.save
         ud = UserDirection.new(user_id: @user.id, direction_id: params[:direction_id])
         ud.save
-        format.html { redirect_to @user, notice: 'Peril atualizado com sucesso.' }
+        format.html { redirect_to @user, notice: 'Perfil atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }

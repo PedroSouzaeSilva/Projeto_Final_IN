@@ -57,4 +57,16 @@ $(document).ready(function(){
       if(ocorre_vazio) {swal("Campo vazio", "", "error");}
    });
   });
+  
+  $(".proj-tarefa a").each(function(){
+     console.log($(this).text())
+     if($(this).text()== "true"){
+         $(this).text("Completa");
+         $(this).css("color", "green");
+     }
+     else{
+         $(this).text("Incompleta");
+         $(this).css("color", "red");
+     } 
+  });
 });

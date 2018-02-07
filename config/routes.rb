@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   post 'form_criar_tarefa', to: 'assignmentprojs#create', as: :form_criar_tarefa
-  resources :assignmentprojs, except: :index
+  resources :assignmentprojs
 
   resources :goals
   resources :teams
@@ -16,7 +16,6 @@ Rails.application.routes.draw do
   delete 'logout', to: "sessions#destroy", as: :logout
 
   resources :users
-
   #rota para o "feed" de diretorias
   get 'directions', to: "directions#index", as: :directions
 

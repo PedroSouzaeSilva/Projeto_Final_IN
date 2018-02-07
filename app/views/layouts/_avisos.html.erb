@@ -7,3 +7,23 @@
         <p class= "alert-global"><%= alert%></p>
     </div>
 </div>
+
+<% if (notice) %>
+    <script>
+        $(document).ready(function(){
+        $(".notice-container").css("display", "none")
+            swal("<%= notice %>","","success");
+            $(".swal-footer").css("text-align", "center");
+        });
+    </script>
+<% end %>
+
+<% if (alert) %>
+    <script>
+        $(document).ready(function(){
+        $(".alert-container").css("display", "none")
+        swal("<%= alert %>","","error");
+        $(".swal-footer").css("text-align", "center");
+        });
+    </script>
+<% end %>
