@@ -1,35 +1,38 @@
-<%= form_with(model: assignmentproj, local: true) do |form| %>
-  <% if assignmentproj.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(assignmentproj.errors.count, "error") %> prohibited this assignmentproj from being saved:</h2>
+<section class="edit-tarefa">
+    <%= form_with(model: assignmentproj, local: true) do |form| %>
+      <% if assignmentproj.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(assignmentproj.errors.count, "error") %> prohibited this assignmentproj from being saved:</h2>
 
-      <ul>
-      <% assignmentproj.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+          <ul>
+          <% assignmentproj.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
+
+      <div class="edit-tarefa-container">
+
+        <div class="field">
+          <%= form.text_field :name, id: :assignmentproj_name, placeholder:"Tarefa" %>
+        </div>
+
+        <div class="field">
+        <%= form.text_field :description, id: :assignmentproj_description, placeholder:"Descrição" %>
+        </div>
+        <%= select("", "user_id", User.all.collect {|user| [ user.name,
+          user.id ] }, {include_blank: "Membro"}) %>
+
+        <div class="field-feito">
+          <%= form.label :realized, "Feito?"%>
+          <%= form.check_box :realized, id: :assignmentproj_realized %>
+        </div>
+
+        <div class="actions">
+          <%= form.submit "Editar", class:"blue-button perfil-voltar perfil-btn" %>
+        </div>
+      <% end %>
+
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :assignmentproj_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description, id: :assignmentproj_description %>
-  </div>
-  <%= form.label "Membros alocados na tarefa" %>
-  <%= select("", "user_id", User.all.collect {|user| [ user.name,
-    user.id ] }, {include_blank: "Membro"}) %>
-
-  <div class="field">
-    <%= form.label :realized %>
-    <%= form.check_box :realized, id: :assignmentproj_realized %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit "Editar tarefa"%>
-  </div>
-<% end %>
+</section>

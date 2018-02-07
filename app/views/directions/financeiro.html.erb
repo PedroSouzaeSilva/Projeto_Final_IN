@@ -1,21 +1,28 @@
-<h1>Diretoria de Financeiro</h1>
+<section class="diretoria">
 
-<div class='Diretor-nav'>
-    <h2>Diretor</h2>
-    <% @assessores.each do |assessor| %>
-      <% if assessor.dir %>
-        <p><%= link_to assessor.name, assessor %></p>
-        <%= image_tag assessor.avatar.thumb.url, alt: "Foto de Perfil", class: "foto" if !assessor.avatar.nil? unless assessor.avatar.blank?%>
-      <% end %>
-    <% end %>
-</div>
+  <h1>Diretoria de Financeiro</h1>
 
-<div class='Assessor-nav'>
-    <h2>Assessores</h2>
-    <% @assessores.each do |assessor| %>
-      <% if !assessor.dir %>
-        <p><%= link_to assessor.name, assessor %></p>
-        <%= image_tag assessor.avatar.thumb.url, alt: "Foto de Perfil", class: "foto" if !assessor.avatar.nil? unless assessor.avatar.blank?%>
-      <% end %>
-    <% end %>
+  <div class="diretoria-container">
+
+    <div class='Diretor-nav'>
+        <h2>Diretor</h2>
+        <% @assessores.each do |assessor| %>
+          <% if assessor.dir %>
+            <p><%= link_to assessor.name, assessor %></p>
+            <%= image_tag assessor.avatar.thumb.url, alt: "Foto de Perfil", class: "foto" if !assessor.avatar.nil? unless assessor.avatar.blank?%>
+          <% end %>
+        <% end %>
+    </div>
+
+    <div class='Assessor-nav'>
+        <h2>Assessores</h2>
+        <% @assessores.each do |assessor| %>
+          <% if !assessor.dir %>
+            <p><%= link_to assessor.name, assessor %></p>
+            <%= image_tag assessor.avatar.thumb.url, alt: "Foto de Perfil", class: "foto" if !assessor.avatar.nil? unless assessor.avatar.blank?%>
+          <% end %>
+        <% end %>
+    </div>
+
 </div>
+</section>
